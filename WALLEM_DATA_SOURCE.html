@@ -1,0 +1,1469 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>OCRA RULE — One Code Rule All · Governance · V.02</title>
+<style>
+:root{--bg:#020914;--p:#071522;--p2:#0a1d2d;--line:#245b75;--c:#18baff;--c2:#82ddff;--t:#eef8fc;--m:#93afbd;--ok:#35d28b;--w:#ffc857;--bad:#ff6262}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:linear-gradient(180deg,#01060d,#03111d 55%,#020811);color:var(--t);font:14px Inter,Segoe UI,Arial,sans-serif}.shell{max-width:1450px;margin:auto;padding:18px}header{position:sticky;top:6px;z-index:20;display:flex;gap:16px;align-items:center;padding:15px 18px;background:#061522f2;border:1px solid var(--line);border-radius:14px;box-shadow:0 16px 45px #0008}h1{font-size:clamp(20px,3vw,34px);margin:0;letter-spacing:.045em}header p{margin:4px 0 0;color:var(--c2);letter-spacing:.14em;font-size:11px}.actions{margin-left:auto;display:flex;gap:8px;flex-wrap:wrap}button,input{font:inherit}button{border:1px solid #1985b9;background:#08618a;color:#fff;border-radius:8px;padding:9px 12px;cursor:pointer}button.secondary{background:#071725;border-color:#315d72;color:#d8edf5}.layout{display:grid;grid-template-columns:330px 1fr;gap:14px;margin-top:14px}.panel{background:linear-gradient(145deg,#081926,#030d16);border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:0 15px 40px #0006}.ph{padding:12px 14px;background:#0c2a3c88;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;gap:10px}.ph h2{font-size:14px;letter-spacing:.08em;margin:0}.body{padding:14px}aside{position:sticky;top:102px;align-self:start;max-height:calc(100vh - 118px);overflow:auto}#search{width:100%;padding:10px;border:1px solid #315d72;background:#020b12;color:white;border-radius:8px;margin-bottom:8px}.navItem{display:block;padding:9px;border:1px solid #1c4458;background:#06141f;border-radius:8px;margin:6px 0;color:#eef8fc;text-decoration:none}.navItem:hover,.navItem:focus-visible{border-color:var(--c);background:#0a2638;outline:none}.code{font-weight:700;color:var(--c2);font-size:12px}.name{margin-top:3px;font-size:12px}.pill{font-size:10px;border:1px solid #315d72;border-radius:999px;padding:3px 7px;color:var(--m)}main{display:grid;gap:14px}.metaGrid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.meta{border:1px solid #24556c;border-radius:9px;padding:11px;background:#061520}.meta b{display:block;color:var(--c2);font-size:11px;margin-bottom:4px}.locked{border-left:5px solid var(--w);padding:16px;background:#231c0c;border-radius:9px;line-height:1.7}.locked b{color:#ffe099}.doctrine{margin:0;white-space:pre-wrap;overflow-wrap:anywhere;font:14px/1.72 Arial,Helvetica,sans-serif;color:#edf7fb;background:#04111b;border:1px solid #1d4b61;border-radius:10px;padding:18px}.doctrine-panel{scroll-margin-top:100px}.audit{border-left:5px solid var(--ok);padding:15px;background:#07251b;border-radius:9px;line-height:1.7}.audit strong{color:#8af0bd}.hidden{display:none!important}footer{text-align:center;color:#6f8d9d;font-size:11px;margin:16px}.source-note{color:var(--m);font-size:12px;line-height:1.6;margin-top:10px}
+@media(max-width:1000px){.layout{grid-template-columns:1fr}aside{position:static;max-height:none}.metaGrid{grid-template-columns:1fr 1fr}}
+@media(max-width:620px){.shell{padding:8px}header{position:relative;flex-wrap:wrap}.actions{margin-left:0}.metaGrid{grid-template-columns:1fr}.doctrine{padding:14px;font-size:13px;line-height:1.65}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
+@media print{body{background:#fff;color:#111}.shell{max-width:none;padding:0}header{position:static;background:#071522;box-shadow:none}.actions,aside,#search{display:none!important}.layout{display:block}.panel{box-shadow:none;break-inside:auto;margin-bottom:12px}.doctrine{background:#fff;color:#111;border-color:#bbb}.locked,.meta,.audit{background:#fff;color:#111}.ph{background:#eef5f8;color:#111}}
+</style>
+<style id="cbr-doctrine-readiness-style">
+/* CABERIS PROJECT DOCTRINE — ARCHITECT CONSOLE READINESS LAYER */
+:root{--cbr-qg-bg:rgba(4,17,27,.96);--cbr-qg-line:#28566e;--cbr-qg-text:#eef8fc;--cbr-qg-accent:#82ddff;--cbr-qg-active:#18baff}
+.cbr-doctrine-ribbon{position:relative;z-index:30;max-width:1450px;margin:10px auto 0;padding:9px 14px;border:1px solid var(--cbr-qg-line);border-radius:10px;background:linear-gradient(90deg,rgba(6,21,34,.96),rgba(10,38,56,.9));color:var(--cbr-qg-text);font:700 11px/1.4 Inter,Segoe UI,Arial,sans-serif;letter-spacing:.12em;text-transform:uppercase;box-shadow:0 10px 30px #0005}
+.cbr-doctrine-ribbon span{color:var(--cbr-qg-accent)}
+.cbr-qg-toggle{position:fixed;right:14px;top:14px;z-index:1001;display:none;border:1px solid var(--cbr-qg-line);border-radius:9px;background:var(--cbr-qg-bg);color:var(--cbr-qg-text);padding:9px 11px;font:700 11px Inter,Segoe UI,Arial,sans-serif;letter-spacing:.08em;cursor:pointer}
+.cbr-qg{position:fixed;right:14px;top:82px;z-index:1000;width:220px;max-height:calc(100vh - 100px);overflow:auto;padding:10px;border:1px solid var(--cbr-qg-line);border-radius:12px;background:var(--cbr-qg-bg);box-shadow:0 18px 45px #0009;backdrop-filter:blur(12px)}
+.cbr-qg-title{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:4px 5px 9px;color:var(--cbr-qg-accent);font:800 11px Inter,Segoe UI,Arial,sans-serif;letter-spacing:.1em;text-transform:uppercase;border-bottom:1px solid var(--cbr-qg-line)}
+.cbr-qg a{display:block;margin-top:6px;padding:7px 8px;border:1px solid transparent;border-radius:7px;color:var(--cbr-qg-text);text-decoration:none;font:600 11px/1.3 Inter,Segoe UI,Arial,sans-serif}
+.cbr-qg a:hover,.cbr-qg a:focus-visible{border-color:var(--cbr-qg-active);background:rgba(24,186,255,.10);outline:none}
+.cbr-qg a.is-active{border-color:var(--cbr-qg-active);background:rgba(24,186,255,.17);color:#fff}
+.cbr-qg-top{margin-top:8px!important;text-align:center;border-color:var(--cbr-qg-line)!important;color:var(--cbr-qg-accent)!important}
+@media(max-width:1180px){.cbr-qg-toggle{display:block}.cbr-qg{top:58px;transform:translateX(calc(100% + 25px));transition:transform .2s ease}.cbr-qg.is-open{transform:translateX(0)}}
+@media(max-width:620px){.cbr-doctrine-ribbon{margin:6px 8px 0;padding:8px 10px;font-size:9px}.cbr-qg{right:8px;width:min(88vw,280px)}.cbr-qg-toggle{right:8px;top:8px}}
+@media print{.cbr-doctrine-ribbon,.cbr-qg,.cbr-qg-toggle{display:none!important}}
+</style>
+<style id="cbr-qg-scroll-correction-style">
+/* CABERIS QUICK GLOSSARY SCROLL CORRECTION */
+.cbr-qg{
+  display:flex!important;
+  flex-direction:column!important;
+  overflow-y:auto!important;
+  overflow-x:hidden!important;
+  overscroll-behavior:contain;
+  scrollbar-width:thin;
+  scrollbar-color:#2f8fb6 #06131d;
+  padding-bottom:10px!important;
+}
+.cbr-qg::-webkit-scrollbar{width:8px}
+.cbr-qg::-webkit-scrollbar-track{background:#06131d;border-radius:999px}
+.cbr-qg::-webkit-scrollbar-thumb{background:#2f8fb6;border-radius:999px;border:2px solid #06131d}
+.cbr-qg-title{position:sticky!important;top:-10px;z-index:3;background:linear-gradient(180deg,#082234 86%,#082234ee);padding-top:10px!important;padding-bottom:9px!important;margin-top:-10px!important}
+.cbr-qg a{flex:0 0 auto}
+.cbr-qg .cbr-qg-top{position:sticky!important;bottom:-10px;z-index:3;background:#082234!important;margin-bottom:-10px!important;padding-bottom:12px!important;box-shadow:0 -10px 18px #020812e6}
+.cbr-qg a .cbr-qg-code{display:block;color:#82ddff;font-size:9px;font-weight:800;letter-spacing:.12em;margin-bottom:2px}
+.cbr-qg a .cbr-qg-name{display:block;white-space:normal;line-height:1.25}
+.cbr-qg a.is-active{scroll-margin-block:90px}
+@media(min-width:1181px){.cbr-qg{max-height:calc(100vh - 96px)!important}}
+</style><style id="cbr-left-index-scroll-style">
+/* CABERIS LEFT RULE INDEX FULL SCROLL CORRECTION */
+@media (min-width:1001px){
+  .layout > aside.panel{
+    position:sticky!important;
+    top:102px!important;
+    align-self:start!important;
+    height:calc(100vh - 118px)!important;
+    max-height:calc(100vh - 118px)!important;
+    min-height:0!important;
+    display:flex!important;
+    flex-direction:column!important;
+    overflow:hidden!important;
+  }
+  .layout > aside.panel > .ph{
+    flex:0 0 auto!important;
+  }
+  .layout > aside.panel > .body{
+    flex:1 1 auto!important;
+    min-height:0!important;
+    overflow-y:auto!important;
+    overflow-x:hidden!important;
+    overscroll-behavior:contain;
+    scrollbar-width:thin;
+    scrollbar-color:#2f8fb6 #06131d;
+    padding-bottom:18px!important;
+  }
+  .layout > aside.panel > .body::-webkit-scrollbar,
+  nav.side::-webkit-scrollbar{width:8px}
+  .layout > aside.panel > .body::-webkit-scrollbar-track,
+  nav.side::-webkit-scrollbar-track{background:#06131d;border-radius:999px}
+  .layout > aside.panel > .body::-webkit-scrollbar-thumb,
+  nav.side::-webkit-scrollbar-thumb{background:#2f8fb6;border-radius:999px;border:2px solid #06131d}
+  .layout > aside.panel > .body > input:first-child,
+  .layout > aside.panel > .body > #search{
+    position:sticky!important;
+    top:0!important;
+    z-index:4!important;
+    box-shadow:0 8px 14px #020812cc!important;
+  }
+  nav.side:not(.cbr-qg){
+    position:sticky!important;
+    top:18px!important;
+    align-self:start!important;
+    height:calc(100vh - 36px)!important;
+    max-height:calc(100vh - 36px)!important;
+    min-height:0!important;
+    overflow-y:auto!important;
+    overflow-x:hidden!important;
+    overscroll-behavior:contain;
+    scrollbar-width:thin;
+    scrollbar-color:#2f8fb6 #06131d;
+    padding-bottom:18px!important;
+  }
+}
+.layout > aside.panel .navItem.is-active,
+.layout > aside.panel a[aria-current="true"],
+nav.side:not(.cbr-qg) a.is-active,
+nav.side:not(.cbr-qg) a[aria-current="true"]{
+  border-color:#18baff!important;
+  background:#0b2b40!important;
+  box-shadow:inset 3px 0 0 #82ddff!important;
+}
+@media(max-width:1000px){
+  .layout > aside.panel{
+    position:static!important;
+    height:auto!important;
+    max-height:none!important;
+    overflow:visible!important;
+  }
+  .layout > aside.panel > .body{
+    max-height:none!important;
+    overflow:visible!important;
+  }
+  nav.side:not(.cbr-qg){
+    position:static!important;
+    height:auto!important;
+    max-height:none!important;
+    overflow:visible!important;
+  }
+}
+</style></head>
+<body id="top"><div class="cbr-doctrine-ribbon">CABERIS PROJECT DOCTRINE · ARCHITECT CONSOLE READY <span>· PRESENTATION LAYER ONLY</span></div><div class="shell">
+<header>
+<div><h1>OCRA RULE</h1><p>ONE CODE RULE ALL · CABERIS GOVERNANCE · GROWING CONTROLLED RULE · V.02</p></div>
+<div class="actions"><button class="secondary" id="expandBtn">Collapse Sections</button><button class="secondary" onclick="window.print()">Print / PDF</button></div>
+</header>
+<section class="panel" id="ocra-rule-foundation" style="margin-top:14px">
+<div class="ph"><h2>OCRA RULE FOUNDATION</h2><span class="pill">V.02</span></div>
+<div class="body">
+<div class="metaGrid">
+<div class="meta"><b>DOCUMENT</b>OCRA RULE</div>
+<div class="meta"><b>FULL TITLE</b>OCRA — ONE CODE RULE ALL</div>
+<div class="meta"><b>REVISION</b>V.02</div>
+<div class="meta"><b>STATUS</b>Growing Controlled Rule</div>
+</div>
+<div class="source-note">The governance interface organizes the uploaded doctrine. The doctrine text below is installed from OCRA RULE.txt without rewriting, shortening, correction, or invention.</div>
+</div>
+</section>
+<div class="layout">
+<aside class="panel">
+<div class="ph"><h2>OCRA RULE INDEX</h2><span class="pill">22 Sections</span></div>
+<div class="body">
+<input aria-label="Search OCRA rule" id="search" placeholder="Search rule or parameter"/>
+<div id="nav"><a class="navItem" href="#core"><div class="code">CORE RULE</div><div class="name">One Code Rule All</div></a>
+<a class="navItem" href="#anti-drift"><div class="code">LOCKED CONTROL</div><div class="name">OCRA Principle and Anti-Drift Rules</div></a>
+<a class="navItem" href="#section-1"><div class="code">SECTION 01</div><div class="name">Permanent global page rule</div></a>
+<a class="navItem" href="#section-2"><div class="code">SECTION 02</div><div class="name">OCRA requirement</div></a>
+<a class="navItem" href="#section-3"><div class="code">SECTION 03</div><div class="name">Master page width and positioning</div></a>
+<a class="navItem" href="#section-4"><div class="code">SECTION 04</div><div class="name">Master color system</div></a>
+<a class="navItem" href="#section-5"><div class="code">SECTION 05</div><div class="name">Background parameters</div></a>
+<a class="navItem" href="#section-6"><div class="code">SECTION 06</div><div class="name">Glassmorphism parameters</div></a>
+<a class="navItem" href="#section-7"><div class="code">SECTION 07</div><div class="name">Shadow parameters</div></a>
+<a class="navItem" href="#section-8"><div class="code">SECTION 08</div><div class="name">Hover and lift behaviour</div></a>
+<a class="navItem" href="#section-9"><div class="code">SECTION 09</div><div class="name">Typography</div></a>
+<a class="navItem" href="#section-10"><div class="code">SECTION 10</div><div class="name">Page-opening structure</div></a>
+<a class="navItem" href="#section-11"><div class="code">SECTION 11</div><div class="name">Mandatory page-content parameters</div></a>
+<a class="navItem" href="#section-12"><div class="code">SECTION 12</div><div class="name">Permanent disclosure and protection logos</div></a>
+<a class="navItem" href="#section-13"><div class="code">SECTION 13</div><div class="name">Permanent legal/protection section</div></a>
+<a class="navItem" href="#section-14"><div class="code">SECTION 14</div><div class="name">Permanent lower/footer logo</div></a>
+<a class="navItem" href="#section-15"><div class="code">SECTION 15</div><div class="name">Permanent footer text</div></a>
+<a class="navItem" href="#section-16"><div class="code">SECTION 16</div><div class="name">Final animated logo addresses</div></a>
+<a class="navItem" href="#section-17"><div class="code">SECTION 17</div><div class="name">Market-page disclosure framework</div></a>
+<a class="navItem" href="#section-18"><div class="code">SECTION 18</div><div class="name">Third-party component requirements</div></a>
+<a class="navItem" href="#section-19"><div class="code">SECTION 19</div><div class="name">Responsive parameters</div></a>
+<a class="navItem" href="#section-20"><div class="code">SECTION 20</div><div class="name">Accessibility and structural controls</div></a>
+<a class="navItem" href="#section-21"><div class="code">SECTION 21</div><div class="name">Permanent content-protection rules</div></a>
+<a class="navItem" href="#section-22"><div class="code">SECTION 22</div><div class="name">Proposed permanent page-creation checklist</div></a>
+<a class="navItem" href="#section-23"><div class="code">SECTION 23</div><div class="name">Caberis Signature Interface System</div></a>
+<a class="navItem" href="#source-audit"><div class="code">SOURCE AUDIT</div><div class="name">Word-for-word installation status</div></a></div>
+</div>
+</aside>
+<main>
+<section class="panel searchable" id="core">
+<div class="ph"><h2>THE OCRA RULE</h2><span class="pill">WORD FOR WORD</span></div>
+<div class="body"><pre class="doctrine">THE OCRA RULE:
+
+OCRA — ONE CODE RULE ALL
+
+One Code Rule All means one controlled codebase must serve the complete Caberis deployment without separate drifting versions.
+
+The same code must govern:
+
+desktop;
+tablet;
+mobile;
+page layout;
+components;
+interactions;
+hover, lift, and shadow behaviour;
+modal or lightbox behaviour;
+navigation;
+responsive adjustments;
+Loader, Viewer, and Runtime connections.
+Locked OCRA Principle
+
+Do not create separate desktop and mobile codes. Do not duplicate the page into independent versions. Use one controlled code that adapts responsively while preserving the same identity, function, data connection, and behaviour across all devices.
+
+OCRA Anti-Drift Rules
+One page must use one master code.
+Desktop and mobile must not become separate systems.
+Responsive CSS may change arrangement, spacing, and scale, but not function or identity.
+A correction must be made in the master code, not patched into only one device view.
+Buttons, cards, modals, navigation, and loaders must retain the same controlled behaviour.
+Mobile must not lose required content or functionality.
+Desktop must not contain features absent from mobile unless technically impossible and formally declared.
+Duplicate code blocks, conflicting media rules, and device-specific copies must be removed.
+The code must remain reusable across the controlled Caberis architecture.
+Any change that breaks cross-device consistency is an OCRA drift condition.
+OCRA Governing Sentence
+
+One code. One identity. One function. All devices.
+
+OCRA is not an ATHENA data-sorting rule. It is the universal Caberis deployment and interface rule that ATHENA outputs, Viewer pages, Loader pages, MONETA tools, and other Caberis systems must follow.
+
+</pre></div>
+</section>
+<section class="panel searchable" id="anti-drift">
+<div class="ph"><h2>LOCKED INSTALLATION CONTROL</h2><span class="pill">NO HEADER LOGO</span></div>
+<div class="body"><div class="locked"><b>Governance use:</b> This rule is the continuing OCRA authority for Caberis page creation, validation, correction, and anti-drift review. Any future improvement must be recorded through an updated controlled revision rather than silently changing this installed doctrine.</div></div>
+</section>
+<section class="panel doctrine-panel searchable" id="section-1">
+<div class="ph"><h2>SECTION 01</h2><span class="pill">CONTROLLED TEXT</span></div>
+<div class="body"><pre class="doctrine">CABERIS PAGE CREATION PARAMETERS
+1. Permanent global page rule
+1.1 No header logo
+
+All newly created Caberis web pages must have:
+
+no left header logo;
+no right header logo;
+no logo beside the page title;
+no Caberis emblem inside the top hero;
+no duplicated desktop or mobile header logo;
+no placeholder logo in the header.
+
+The page must begin with its content, page title, introduction, ticker, video, or functional hero according to the page purpose.
+
+The two old hero logo addresses found in one sample are therefore reference only and must not be installed in future page headers:
+
+Caberis Left Logo JPG
+https://images.squarespace-cdn.com/content/69d8fe34059f5a4d650d9020/3342a646-b571-494f-957d-d2007e551d67/Caberis+Left+Logo.JPG
+Caberis Right Logo JPG
+https://images.squarespace-cdn.com/content/69d8fe34059f5a4d650d9020/a7267567-f242-4f5f-81fa-ff09142d2672/Caberis+Right+Logo.JPG
+
+These addresses appear in the previous report-page hero, but the new rule removes them from future headers.
+</pre></div>
+</section><section class="panel doctrine-panel searchable" id="section-2">
+<div class="ph"><h2>SECTION 02</h2><span class="pill">CONTROLLED TEXT</span></div>
+<div class="body"><pre class="doctrine">2. OCRA requirement
+2.1 One Code Rule All
+
+Each page must use:
+
+one HTML structure;
+one CSS system;
+one JavaScript system;
+one responsive codebase;
+one controlled page identity;
+one source of truth for desktop, tablet, and mobile.
+
+Do not create:
+
+a separate mobile page;
+duplicate mobile HTML;
+duplicate desktop HTML;
+device-specific content copies;
+conflicting page versions;
+separate logo systems;
+isolated patches that only work on one screen size.
+
+Responsive CSS may change:
+
+number of columns;
+spacing;
+font size;
+content stacking;
+image size;
+card width;
+legal-panel arrangement;
+media height.
+
+Responsive CSS must not change:
+
+meaning;
+page identity;
+legal content;
+protection logos;
+links;
+disclosures;
+data source;
+essential functions.</pre></div>
+</section><section class="panel doctrine-panel searchable" id="section-3">
+<div class="ph"><h2>SECTION 03</h2><span class="pill">CONTROLLED TEXT</span></div>
+<div class="body"><pre class="doctrine">3. Master page width and positioning
+3.1 Full-width outer page
+
+Preferred outer-page behaviour:
+
+position: relative;
+left: 50%;
+width: 100vw;
+max-width: 100vw;
+margin-left: -50vw;
+overflow-x: hidden;
+
+Where supported, 100dvw may be used for dynamic viewport width.
+
+3.2 Main content width
+
+Standard page-content width:
+
+width: min(94%, 1440px);
+max-width: 1440px;
+margin-left: auto;
+margin-right: auto;
+
+The three supplied samples consistently use a maximum controlled width of 1440 px.
+
+3.3 Mobile page width
+
+Typical mobile container:
+
+width: calc(100% - 20px);
+
+or:
+
+width: calc(100% - 24px);
+
+The exact mobile side margin should remain consistent within the same page.
+</pre></div>
+</section><section class="panel doctrine-panel searchable" id="section-4">
+<div class="ph"><h2>SECTION 04</h2><span class="pill">CONTROLLED TEXT</span></div>
+<div class="body"><pre class="doctrine">4. Master color system
+
+Two green values appear in the provided page copies. They represent two related skins and must not be mixed casually.
+
+4.1 Core Caberis/OCRA color set
+
+Used by the homepage and report system:
+
+Purpose	Value
+Caberis Blue	#0055a4
+Caberis Green	#00ffcc
+Yellow	#ffb800
+Red	#e31b23
+Black	#1a1a1a
+White	#ffffff
+Logic Grey	#e8e8e8
+Soft Grey	#eef4fb or #f5f7fb
+Main Text	#111111
+Secondary Text	#26323f
+Muted Text	#667085
+
+The report page defines blue, green, yellow, red, black, white, greys, glass levels, and glow values as controlled variables.
+
+4.2 Fintech/lightweight market-page color set
+
+Used by the shipping-market page:
+
+Purpose	Value
+Caberis Blue	#0055a4
+Dark Blue	#003f7c
+Fintech Green	#00cfa6
+Red	#e31b23
+Yellow	#e5a900
+Black	#17202a
+Main Text	#26323f
+Muted Text	#667085
+
+The market page uses the slightly darker fintech green #00cfa6 rather than the luminous OCRA green #00ffcc.
+
+4.3 Permanent disclosure-label colors
+
+These exact label colors are used for the four disclosure classes:
+
+Disclosure	Color
+Red notice	#d92d20
+Yellow notice	#b78103
+Blue notice	#175cd3
+Green notice	#087443
+
+4.4 No uncontrolled colors
+
+Do not introduce:
+
+random accent colors;
+unapproved purple;
+unrelated orange;
+arbitrary gradients;
+inconsistent blue or green values;
+new disclaimer-icon colors;
+newly invented warning colors.
+
+New colors must first be listed and approved.
+</pre></div>
+</section><section class="panel doctrine-panel searchable" id="section-5">
+<div class="ph"><h2>SECTION 05</h2><span class="pill">CONTROLLED TEXT</span></div>
+<div class="body"><pre class="doctrine">5. Background parameters
+5.1 Standard light Caberis background
+
+Preferred page background:
+
+background:
+  radial-gradient(circle at 8% 8%, rgba(0,255,204,.18), transparent 30%),
+  radial-gradient(circle at 88% 0%, rgba(0,85,164,.16), transparent 34%),
+  linear-gradient(135deg,#ffffff 0%,#eef4fb 42%,#e8e8e8 100%);
+5.2 Fintech lightweight background
+background:
+  radial-gradient(circle at 8% 5%,rgba(0,207,166,.12),transparent 28%),
+  radial-gradient(circle at 90% 0%,rgba(0,85,164,.13),transparent 32%),
+  linear-gradient(135deg,#ffffff 0%,#f1f5fa 48%,#e8edf3 100%);
+5.3 Background grid
+
+A subtle technical grid may be used:
+
+background-image:
+  linear-gradient(rgba(0,85,164,.026) 1px,transparent 1px),
+  linear-gradient(90deg,rgba(0,85,164,.026) 1px,transparent 1px);
+background-size: 42px 42px;
+
+or 44px 44px in the lightweight market skin.
+
+The grid must remain:
+
+subtle;
+non-distracting;
+behind the content;
+gradually faded toward the bottom.</pre></div>
+</section><section class="panel doctrine-panel searchable" id="section-6">
+<div class="ph"><h2>SECTION 06</h2><span class="pill">CONTROLLED TEXT</span></div>
+<div class="body"><pre class="doctrine">6. Glassmorphism parameters
+6.1 Standard glass values
+
+Core/report skin:
+
+--glass: rgba(255,255,255,.74);
+--glass-strong: rgba(255,255,255,.88);
+--glass-border: rgba(255,255,255,.82);
+
+Market/lightweight skin:
+
+--glass: rgba(255,255,255,.82);
+--glass-strong: rgba(255,255,255,.94);
+--glass-border: rgba(255,255,255,.88);
+6.2 Standard blur
+
+Preferred:
+
+backdrop-filter: blur(24px) saturate(150%);
+-webkit-backdrop-filter: blur(24px) saturate(150%);
+
+Lightweight market page:
+
+backdrop-filter: blur(18px) saturate(135%);
+-webkit-backdrop-filter: blur(18px) saturate(135%);
+6.3 Panel border radius
+
+Standard major-panel radius:
+
+border-radius: clamp(28px,4vw,44px);
+
+or, for the market lightweight edition:
+
+border-radius: clamp(24px,3.5vw,40px);
+
+Mobile may reduce to approximately:
+
+24px;
+26px;
+28px.</pre></div>
+</section><section class="panel doctrine-panel searchable" id="section-7">
+<div class="ph"><h2>SECTION 07</h2><span class="pill">CONTROLLED TEXT</span></div>
+<div class="body"><pre class="doctrine">7. Shadow parameters
+7.1 Standard 3D shadow
+box-shadow:
+  0 34px 80px rgba(26,26,26,.14),
+  0 14px 30px rgba(0,85,164,.08),
+  inset 0 1px 0 rgba(255,255,255,.88);
+7.2 Standard hover shadow
+box-shadow:
+  0 52px 110px rgba(26,26,26,.22),
+  0 24px 55px rgba(0,85,164,.16),
+  0 0 42px rgba(0,255,204,.12),
+  inset 0 1px 0 rgba(255,255,255,.95);
+7.3 Lightweight market shadow
+
+Normal:
+
+box-shadow:
+  0 24px 60px rgba(26,26,26,.10),
+  0 10px 24px rgba(0,85,164,.07),
+  inset 0 1px 0 rgba(255,255,255,.90);
+
+Hover:
+
+box-shadow:
+  0 34px 76px rgba(26,26,26,.14),
+  0 16px 34px rgba(0,85,164,.11),
+  0 0 34px rgba(0,207,166,.08),
+  inset 0 1px 0 rgba(255,255,255,.96);</pre></div>
+</section><section class="panel doctrine-panel searchable" id="section-8">
+<div class="ph"><h2>SECTION 08</h2><span class="pill">CONTROLLED TEXT</span></div>
+<div class="body"><pre class="doctrine">8. Hover and lift behaviour
+8.1 Major panels
+
+Typical major-panel hover:
+
+transform: translateY(-8px) scale(1.004);
+
+or:
+
+transform: translateY(-8px) scale(1.006);
+8.2 Lightweight market cards
+transform: translateY(-5px);
+8.3 Buttons
+
+Typical button hover:
+
+transform: translateY(-4px);
+8.4 Cards
+
+Cards may use stronger 3D motion:
+
+transform:
+  translateY(-14px)
+  rotateX(4deg)
+  rotateY(-3deg)
+  scale(1.025);
+8.5 Motion-control requirement
+
+Every page must include:
+
+@media (prefers-reduced-motion: reduce)
+
+Under reduced-motion preference:
+
+remove animation;
+remove transitions;
+remove lifting;
+keep all content accessible.</pre></div>
+</section><section class="panel doctrine-panel searchable" id="section-9">
+<div class="ph"><h2>SECTION 09</h2><span class="pill">CONTROLLED TEXT</span></div>
+<div class="body"><pre class="doctrine">9. Typography
+9.1 Font family
+
+Current page copies consistently use:
+
+font-family: Arial, Helvetica, sans-serif;
+
+Do not introduce external fonts unless formally approved.
+
+9.2 Main page title
+
+Typical title size:
+
+font-size: clamp(32px,5vw,66px);
+
+or:
+
+font-size: clamp(34px,4.8vw,68px);
+
+Home-page maximum may reach 72px.
+
+9.3 Main title weight
+font-weight: 900;
+9.4 Section titles
+
+Typical:
+
+font-size: clamp(22px,3vw,46px);
+font-weight: 900;
+9.5 Body copy
+
+Typical:
+
+font-size: 14px to 16px;
+line-height: 1.65 to 1.85;
+9.6 Kicker labels
+
+Typical:
+
+font-size: 10px;
+font-weight: 900;
+letter-spacing: 2.5px to 3px;
+text-transform: uppercase;</pre></div>
+</section><section class="panel doctrine-panel searchable" id="section-10">
+<div class="ph"><h2>SECTION 10</h2><span class="pill">CONTROLLED TEXT</span></div>
+<div class="body"><pre class="doctrine">10. Page-opening structure
+
+Since header logos are removed, a page may begin with one of these controlled formats.
+
+10.1 Title-first page
+
+Required parts:
+
+kicker or system label;
+main title;
+short subtitle;
+purpose statement;
+optional controlled accent line.
+10.2 Market page
+
+May begin with:
+
+ticker strip;
+market-awareness kicker;
+page title;
+explanatory subtitle;
+page-purpose notice;
+sector or coverage strip;
+embedded market component.
+10.3 Video-led page
+
+May begin with:
+
+page heading;
+short explanation;
+controlled video shell;
+no header logo;
+no decorative logo beside the video.
+10.4 Report or doctrine page
+
+May begin with:
+
+page title;
+revision or rule identification;
+status;
+purpose;
+controlled index or navigation;
+no header emblem.</pre></div>
+</section><section class="panel doctrine-panel searchable" id="section-11">
+<div class="ph"><h2>SECTION 11</h2><span class="pill">CONTROLLED TEXT</span></div>
+<div class="body"><pre class="doctrine">11. Mandatory page-content parameters
+
+Every page should declare or visibly establish:
+
+page title;
+page purpose;
+intended audience;
+content domain;
+whether data is current, historical, indicative, or static;
+third-party data source where applicable;
+limitation of use;
+responsible author or system identity where applicable;
+legal/protection access;
+footer identity.
+
+For market or financial pages, include:
+
+no-financial-advice statement;
+delayed/incomplete-data warning;
+provider attribution;
+independent-verification warning;
+risk notice;
+third-party ownership notice.
+
+For engineering pages, include as applicable:
+
+operational-estimation limitation;
+not an OEM certification;
+not classification approval;
+not laboratory validation;
+no guaranteed-performance declaration;
+requirement for formal professional engagement where applicable.</pre></div>
+</section><section class="panel doctrine-panel searchable" id="section-12">
+<div class="ph"><h2>SECTION 12</h2><span class="pill">CONTROLLED TEXT</span></div>
+<div class="body"><pre class="doctrine">12. Permanent disclosure and protection logos
+
+These protection/disclaimer assets must remain permanent.
+
+They must not be:
+
+redrawn;
+recolored;
+replaced with emoji;
+replaced with generic SVGs;
+recreated by AI;
+substituted with an invented shield;
+given a different meaning;
+assigned to another disclaimer class.
+12.1 Red Shield — General Notice / Main Legal Protection
+
+Permanent address:
+
+https://images.squarespace-cdn.com/content/69d8fe34059f5a4d650d9020/a41ca183-42dd-4359-b482-1e51ed317438/Disclaimer+Caberis+Shield++Red.png
+
+Used for:
+
+General Maritime Information Notice;
+main legal/protection framework;
+red warning or general disclaimer.
+
+The same red shield is used in both the legal framework and disclosure framework.
+
+12.2 Yellow Triangle — Third-Party Data Notice
+
+Permanent address:
+
+https://images.squarespace-cdn.com/content/69d8fe34059f5a4d650d9020/bc48c304-8a4f-48c4-bcb3-e45042d559d8/Disclaimer+Caberis+Triangle++Yellow.png
+
+Permanent meaning:
+
+Third-Party Market Data Notice
+
+12.3 Blue Shield — No Financial Advice
+
+Permanent address:
+
+https://images.squarespace-cdn.com/content/69d8fe34059f5a4d650d9020/dcf47f82-3eda-4cec-a267-d698860caf97/Disclaimer+Caberis+Shield++Blue.png
+
+Permanent meaning:
+
+No Financial Advice or Trading Reference
+
+12.4 Green Shield — Risk and Verification
+
+Permanent address:
+
+https://images.squarespace-cdn.com/content/69d8fe34059f5a4d650d9020/ec90aebf-937d-473e-8979-2e2de6fbf667/Disclaimer+Caberis+Shield++Green.png
+
+Permanent meaning:
+
+Risk and Independent Verification
+
+12.5 Standard disclosure-icon size
+
+Desktop:
+
+width: 48px;
+flex: 0 0 48px;
+
+Small mobile:
+
+width: 44px;
+
+12.6 Main legal shield size
+
+Normal standard found:
+
+90px;
+92px;
+94px.
+
+Recommended controlled standard for future rule:
+
+width: 94px;
+height: 94px;
+flex: 0 0 94px;</pre></div>
+</section><section class="panel doctrine-panel searchable" id="section-13">
+<div class="ph"><h2>SECTION 13</h2><span class="pill">CONTROLLED TEXT</span></div>
+<div class="body"><pre class="doctrine">13. Permanent legal/protection section
+13.1 Required title
+
+Use one approved title based on page context:
+
+Legal Master Framework Active
+Legal and Protection Framework Active
+
+Do not invent a replacement title without approval.
+
+13.2 Required structural arrangement
+
+Desktop:
+
+red legal shield on the left;
+legal text on the right;
+6px green vertical border;
+left-aligned text;
+legal/protection button below the statements.
+
+Mobile:
+
+red shield centered above;
+horizontal green border above the legal text;
+legal text remains left aligned;
+no legal paragraph may be removed.
+
+The mobile transformation is already defined in the market page.
+
+13.3 Permanent protection link
+
+Preferred permanent full link:
+
+https://www.caberis.com/protection
+
+A relative form also appears:
+
+/protection
+
+For portability, the full address should be treated as the safer controlled address unless Squarespace internal routing requires the relative path.
+
+13.4 Legal button text
+Access Caberis Legal and Protection Framework
+13.5 Button parameters
+min-height: 48px;
+padding: 12px 18px;
+border-radius: 999px;
+background: #0055a4;
+color: #ffffff;
+font-size: 10.5px;
+font-weight: 900;
+letter-spacing: 1.4px;
+text-transform: uppercase;
+</pre></div>
+</section><section class="panel doctrine-panel searchable" id="section-14">
+<div class="ph"><h2>SECTION 14</h2><span class="pill">CONTROLLED TEXT</span></div>
+<div class="body"><pre class="doctrine">14. Permanent lower/footer logo
+14.1 Footer logo address
+
+This is the lower Caberis signature logo currently used across the supplied pages:
+
+https://images.squarespace-cdn.com/content/69d8fe34059f5a4d650d9020/a67bd7b8-9ae3-4af4-a7e7-6630e2f25e4b/No+Back+ground+1.png
+
+This lower logo must be kept in the page rule and must not be replaced or invented.
+
+14.2 Footer logo size
+
+Current samples use:
+
+140px;
+150px;
+mobile approximately 128px.
+
+Recommended controlled range:
+
+width: 140px;
+max-width: 140px;
+height: auto;
+14.3 Footer logo position
+centered;
+above the footer principles;
+not used as a header logo;
+not placed beside the page title;
+not repeated inside multiple sections.
+14.4 Footer logo alt text
+
+Current approved examples:
+
+Caberis Signature
+CABERIS.COM Letter Logo
+
+A future fixed alt text should be selected during rule finalization.
+</pre></div>
+</section><section class="panel doctrine-panel searchable" id="section-15">
+<div class="ph"><h2>SECTION 15</h2><span class="pill">CONTROLLED TEXT</span></div>
+<div class="body"><pre class="doctrine">15. Permanent footer text
+
+The supplied pages repeatedly use:
+
+Reliability Integrity Sustainability
+
+The lower identity block is:
+
+Marine Engineering Specialist
+Creator and System Architect of caberis.com
+Strategic Asset Architect © 2026 Noel Cabe
+Powered by PETH and COS CABERIS
+
+This exact footer appears in both the homepage and market page.
+
+The footer wording must not be silently altered.
+</pre></div>
+</section><section class="panel doctrine-panel searchable" id="section-16">
+<div class="ph"><h2>SECTION 16</h2><span class="pill">CONTROLLED TEXT</span></div>
+<div class="body"><pre class="doctrine">16. Final animated logo addresses
+
+These were provided separately and must be preserved in the rule as controlled asset addresses.
+
+16.1 Final Black Mode
+https://raw.githubusercontent.com/NoelCabe/caberis-asset/011e525e4fd392fe020672cd7cc0c42e897ecd95/Final%20Logo%20Black%20Mode.mp4
+16.2 Final Light Mode
+https://raw.githubusercontent.com/NoelCabe/caberis-asset/011e525e4fd392fe020672cd7cc0c42e897ecd95/Final%20Logo%20White%20Mode.mp4
+
+16.3 Usage restriction
+
+Because the new rule requires no header logo, these MP4 logos must not automatically be installed in the page header.
+
+Their approved future location must be one of the following only after review:
+
+lower brand section;
+footer-adjacent animation;
+dedicated identity panel;
+opening media feature where explicitly required;
+dark/light appearance-controlled lower asset.
+
+They must not be inserted merely to fill empty space.
+</pre></div>
+</section><section class="panel doctrine-panel searchable" id="section-17">
+<div class="ph"><h2>SECTION 17</h2><span class="pill">CONTROLLED TEXT</span></div>
+<div class="body"><pre class="doctrine">17. Market-page disclosure framework
+
+Market and fintech-facing pages should use four permanent disclosure cards.
+
+17.1 General Maritime Information Notice
+
+Icon: Red Shield
+
+Required meaning:
+
+general-interest maritime information;
+educational viewing;
+not financial advice;
+not legal advice;
+not tax advice;
+not brokerage guidance;
+not investment guidance.
+17.2 Third-Party Market Data Notice
+
+Icon: Yellow Triangle
+
+Required meaning:
+
+data supplied by TradingView or another named provider;
+Caberis does not create, independently verify, control, or guarantee provider data;
+prices and classifications may be delayed or incomplete.
+17.3 No Financial Advice or Trading Reference
+
+Icon: Blue Shield
+
+Required meaning:
+
+no recommendation;
+no offer;
+no solicitation;
+no suitability representation;
+inclusion or ordering is not endorsement.
+17.4 Risk and Independent Verification
+
+Icon: Green Shield
+
+Required meaning:
+
+investing and trading involve risk;
+possible loss of principal;
+users must conduct independent research;
+information must be verified through qualified or authorized sources.
+
+The approved wording and icon mapping are visible in the supplied market-page copy.
+</pre></div>
+</section><section class="panel doctrine-panel searchable" id="section-18">
+<div class="ph"><h2>SECTION 18</h2><span class="pill">CONTROLLED TEXT</span></div>
+<div class="body"><pre class="doctrine">18. Third-party component requirements
+
+Where TradingView is used:
+
+18.1 Official component addresses
+
+Ticker:
+
+https://widgets.tradingview-widget.com/w/en/tv-ticker-tape.js
+
+Market data:
+
+https://widgets.tradingview-widget.com/w/en/tv-market-data.js
+18.2 Required isolation
+
+TradingView must remain:
+
+visually isolated inside its own dark container;
+technically isolated from Caberis styling where possible;
+clearly attributed;
+accompanied by delay and availability notices;
+not represented as Caberis-generated data.
+18.3 Required provider line
+Market widgets provided through TradingView
+18.4 Required availability warning
+
+The sample requires disclosure that information may be:
+
+real time;
+delayed;
+indicative;
+incomplete;
+corrected;
+temporarily unavailable.
+
+18.5 Third-Party Visual Cohesion Rule
+
+Third-party components, references, widgets, charts, embeds, feeds, and external tools must be integrated into Caberis through a controlled visual chamber that preserves Caberis identity, spacing, hierarchy, readability, and long-term page cohesion.
+
+The third-party component must remain technically isolated where required, but the surrounding Caberis structure must make the complete page appear intentional, stable, and professionally unified.
+
+The integration must:
+
+preserve the approved Caberis page skin;
+use a controlled outer container around the third-party component;
+maintain consistent page width, radius, spacing, borders, and shadows;
+identify the external provider clearly;
+separate Caberis content from third-party content without making the page look disconnected;
+avoid abrupt changes between light Caberis panels and dark embedded widgets;
+use an approved transition chamber, data shell, frame, or visual buffer where needed;
+maintain balanced spacing above, below, and beside the component;
+prevent the external widget from controlling the complete page appearance;
+avoid temporary-looking patches or isolated dark boxes;
+prevent provider branding, widget controls, or internal layouts from overlapping Caberis content;
+preserve usable height on desktop, tablet, and mobile;
+avoid excessive empty space when the component loads slowly or fails;
+include a controlled loading state;
+include a controlled unavailable or fallback state;
+remain readable if the provider changes its internal presentation;
+avoid depending on fragile internal selectors inside the third-party component;
+use stable official provider addresses only;
+retain provider attribution and legal notices;
+not present third-party information as Caberis-generated;
+not allow third-party styling to redefine Caberis colors, typography, buttons, or page hierarchy;
+remain maintainable when provider widgets are updated, restricted, replaced, or discontinued.
+
+External components may supply information, but Caberis must control the surrounding identity, structure, and user experience.
+
+18.6 Third-Party Longevity Rule
+
+The Caberis page must remain stable and usable even when the provider changes:
+
+internal colors;
+typography;
+controls;
+branding position;
+widget height;
+loading behaviour;
+symbol coverage;
+responsive layout;
+data availability.
+
+The page must rely on the official embed boundary, not on undocumented internal widget styling.
+
+The integration must remain maintainable if the provider:
+
+updates the widget;
+restricts access;
+changes the visual presentation;
+replaces the component;
+suspends the service;
+discontinues the widget.
+
+18.7 Third-Party Loading and Failure State Rule
+
+A third-party component must not leave:
+
+a blank panel;
+a broken frame;
+uncontrolled error text;
+an empty dark area;
+excessive unused height;
+overlapping loading content.
+
+The page must provide a controlled loading state and a controlled unavailable or fallback state when the external information cannot be displayed.
+
+The exact fallback wording must be approved before installation.
+</pre></div>
+</section><section class="panel doctrine-panel searchable" id="section-19">
+<div class="ph"><h2>SECTION 19</h2><span class="pill">CONTROLLED TEXT</span></div>
+<div class="body"><pre class="doctrine">19. Responsive parameters
+19.1 Main breakpoints found
+1180px
+1100px
+1000px
+820px
+768px
+760px
+430px
+19.2 Typical layout changes
+
+At tablet width:
+
+three columns may become two;
+two columns may become one;
+page heading blocks may stack;
+legal panel may stack.
+
+At mobile width:
+
+all primary grids become one column;
+legal shield moves above text;
+page side margins reduce;
+title size reduces;
+footer logo reduces;
+text remains readable;
+hover-only behaviour must not be required to access content.
+19.3 Mobile minimum readability
+
+Do not reduce body copy below approximately:
+
+font-size: 12.5px;
+
+Preferred page body:
+
+14px to 15px;
+
+Legal and disclaimer text must remain readable and may not be hidden on mobile.
+
+19.4 Long-Page Mobile Navigation Rule
+
+For long Caberis pages, mobile users must not be required to scroll continuously through the complete page to locate major sections.
+
+A controlled lighthouse, compact section navigator, floating directory, collapsible index, or equivalent mobile-access system must be provided where page length makes direct navigation difficult.
+
+The navigation must:
+
+identify all major page sections;
+allow direct movement to each section;
+remain usable on mobile, tablet, and desktop;
+avoid covering essential content;
+provide a clear return to the top or main directory;
+use the same controlled page code;
+preserve all content and functions;
+not create a separate mobile version;
+not remove sections merely to reduce scrolling.
+
+Long pages must remain navigable, not merely responsive.
+
+19.5 Mobile Image Integrity Rule
+
+Caberis images must remain fully visible, proportionally correct, and accessible across desktop, tablet, and mobile devices.
+
+Images must not be unintentionally cropped, stretched, compressed, clipped by margins, hidden by fixed-height containers, pushed outside the mobile viewport, or reduced until labels or technical details become unreadable.
+
+Required default behaviour:
+
+responsive width;
+max-width: 100%;
+automatic height;
+preserved aspect ratio;
+centered positioning;
+no horizontal overflow;
+consistent mobile side margins;
+captions and labels retained;
+technical images shown completely.
+
+Technical, evidence, diagram, machinery, screenshot, and document images should default to:
+
+object-fit: contain;
+height: auto;
+
+object-fit: cover should be used only where intentional decorative cropping is approved.
+
+Images must adapt to the screen without losing their content, proportion, or meaning.
+
+19.6 Many-Image Mobile Gallery Rule
+
+Where displaying all full-size images would create excessive scrolling, the page should provide a controlled:
+
+gallery;
+lighthouse;
+thumbnail index;
+image selector;
+lightbox;
+carousel;
+compact image directory.
+
+Required behaviour:
+
+every image remains available;
+image numbering is preserved;
+captions remain associated with the correct image;
+selected images open at a readable size;
+close and return controls are clear;
+no image is silently removed from mobile;
+images are not combined into one compressed image merely to save space;
+the same code controls all devices.
+
+19.7 Explicit Device Readiness Rule
+
+One responsive code must be visually adjusted and functionally complete for:
+
+desktop;
+laptop;
+tablet;
+iPad;
+mobile phone;
+iPhone;
+Android phone;
+portrait orientation;
+landscape orientation;
+comparable current screen sizes.
+
+This requirement does not authorize separate device code.
+
+19.8 Cross-Device Visual Validation Rule
+
+Before release, the final page must be checked across the applicable device classes.
+
+Validation must confirm:
+
+no horizontal overflow;
+no cropped margins;
+no clipped titles;
+no hidden buttons;
+no inaccessible links;
+no overlapping cards;
+no missing images;
+no missing legal content;
+no excessively narrow text columns;
+no unreadable image labels;
+no uncontrolled widget height;
+no function available only on desktop;
+no essential interaction dependent only on hover.
+</pre></div>
+</section><section class="panel doctrine-panel searchable" id="section-20">
+<div class="ph"><h2>SECTION 20</h2><span class="pill">CONTROLLED TEXT</span></div>
+<div class="body"><pre class="doctrine">20. Accessibility and structural controls
+
+Every future page should include:
+
+descriptive alt text for meaningful images;
+aria-label for important buttons and grouped sections;
+semantic &lt;section&gt;, &lt;article&gt;, &lt;footer&gt;, and headings;
+visible focus states for keyboard users;
+reduced-motion support;
+no essential information available only on hover;
+valid heading hierarchy;
+no duplicate IDs;
+no inaccessible low-contrast text;
+no hidden legal content on small screens.</pre></div>
+</section><section class="panel doctrine-panel searchable" id="section-21">
+<div class="ph"><h2>SECTION 21</h2><span class="pill">CONTROLLED TEXT</span></div>
+<div class="body"><pre class="doctrine">21. Permanent content-protection rules
+
+When creating future pages:
+
+do not invent a protection shield;
+do not change protection-logo addresses;
+do not rename the four disclaimer classes without approval;
+do not change their color-to-purpose mapping;
+do not delete the Legal and Protection Framework;
+do not shorten the legal content merely to save space;
+do not remove protection content on mobile;
+do not use a decorative icon in place of a legal icon;
+do not place a header logo;
+do not replace the lower Caberis signature logo;
+do not silently rewrite footer identity;
+do not replace full asset addresses with guessed filenames;
+do not use temporary image-generation URLs;
+do not invent a new Caberis logo.</pre></div>
+</section><section class="panel doctrine-panel searchable" id="section-22">
+<div class="ph"><h2>SECTION 22</h2><span class="pill">CONTROLLED TEXT</span></div>
+<div class="body"><pre class="doctrine">22. Proposed permanent page-creation checklist
+
+Before any future Caberis page is declared complete:
+
+Confirm no header logo is installed.
+Confirm one code controls desktop, tablet, and mobile.
+Confirm the correct approved color family is used.
+Confirm no unapproved color was introduced.
+Confirm width does not exceed 1440 px.
+Confirm full-width outer-page behaviour is controlled.
+Confirm glass, borders, shadows, and radius are consistent.
+Confirm hover and lift work only where appropriate.
+Confirm reduced-motion support exists.
+Confirm page purpose is visible.
+Confirm intended audience is clear.
+Confirm data-provider attribution is present where required.
+Confirm all relevant disclosure cards are included.
+Confirm each disclosure uses the correct permanent icon address.
+Confirm the red legal shield uses its permanent address.
+Confirm the legal/protection section is complete.
+Confirm the protection button points to the correct address.
+Confirm the lower Caberis signature logo uses the permanent address.
+Confirm the lower footer text is exact.
+Confirm the black/light MP4 logo addresses remain recorded but are not automatically inserted in the header.
+Confirm mobile retains all legal and disclosure content.
+Confirm no text, logo, address, or protection asset was invented.
+Confirm all page-specific content was approved.
+Confirm final code contains no placeholders or lorem ipsum.
+Confirm the final page passes OCRA inspection.
+
+Additional OCRA V.02 validation items:
+
+Confirm long pages provide controlled section navigation or lighthouse access.
+Confirm users can return to the top or main directory.
+Confirm images preserve their intended aspect ratio.
+Confirm images are not unintentionally cropped, stretched, or clipped.
+Confirm technical and evidence images remain fully visible.
+Confirm mobile image margins are consistent.
+Confirm pages with many images provide a controlled gallery, lighthouse, lightbox, or compact image navigator.
+Confirm every image remains available on mobile.
+Confirm captions and numbering remain correctly associated.
+Confirm every third-party component is enclosed within an approved Caberis visual chamber.
+Confirm provider attribution remains visible.
+Confirm loading and unavailable states are controlled.
+Confirm the integration does not depend on fragile provider-internal styling.
+Confirm the page remains usable if the provider changes or fails.
+Confirm desktop, laptop, tablet, iPad, iPhone, Android, portrait, and landscape views were checked.
+Confirm no content or function was lost on smaller screens.
+Confirm no horizontal overflow or margin cropping exists.
+Confirm the final output remains governed by one code.
+</pre></div>
+</section>
+<section class="panel doctrine-panel searchable" id="section-23">
+<div class="ph"><h2>SECTION 23</h2><span class="pill">EVOLVING FRAMEWORK</span></div>
+<div class="body"><pre class="doctrine">23. CABERIS SIGNATURE INTERFACE SYSTEM — EVOLVING BRAND FRAMEWORK
+
+23.1 Status
+
+The Caberis Signature Interface System is an evolving brand framework governed under OCRA. It is not declared permanent or final. It will develop through controlled real-work testing, Architect review, approved revision, and preservation of successful interface patterns.
+
+23.2 Purpose
+
+The framework establishes a recognizable Caberis visual and interaction language across governance tools, technical systems, project consoles, desktop pages, tablet layouts, and mobile interfaces while preserving the individual identity and functional purpose of each system.
+
+23.3 Controlled Caberis interface family
+
+Caberis interfaces may share:
+
+clear doctrine and revision hierarchy;
+controlled deep-background and high-contrast presentation;
+structured panels, cards, borders, spacing, and status controls;
+consistent glossary, section-navigation, return, and mobile-access behaviour;
+restrained hover, lift, shadow, glow, and motion;
+readable typography and evidence-first hierarchy;
+responsive behaviour under One Code Rule All;
+accessible focus, reduced-motion, and print handling;
+functional design without unnecessary decoration.
+
+23.4 System identity
+
+Each governance or Caberis tool must retain its own name, function, doctrine, revision, and operational identity. Shared Caberis presentation must not cause HERCULES, ATHENA, OCRA, APOLLO, IGP, WARD, ORION, the Architect Console, or another system to appear as the same doctrine.
+
+23.5 MONETA naming boundary
+
+MONETA is the Caberis finance and fintech governance identity. The words MONETA skin, MONETA theme, MONETA launcher, or similar presentation shorthand must not appear as the formal design identity of non-finance systems. Informal internal design shorthand must be replaced by the correct Caberis or system-specific interface identity. Legitimate references to MONETA as finance governance remain unchanged.
+
+23.6 Evolution and anti-drift
+
+A new interface pattern may be tested before it becomes a repeated Caberis pattern. Successful patterns may be preserved through controlled revision. Weak, excessive, inaccessible, or non-functional patterns may be removed after Architect review. No presentation change may silently alter another governance doctrine, rule, instruction, embedded attachment, data payload, or functional purpose.
+
+23.7 Governing sentence
+
+Recognizably Caberis. Function before decoration. One controlled code. Evolve through tested revision. Preserve every doctrine's identity.</pre></div>
+</section>
+<section class="panel" id="source-audit">
+<div class="ph"><h2>SOURCE INSTALLATION AUDIT</h2><span class="pill">PASS</span></div>
+<div class="body"><div class="audit"><strong>Installed source:</strong> OCRA RULE.txt<br/><strong>Source lines:</strong> 862<br/><strong>Nonblank doctrine lines verified:</strong> <span id="auditCount">pending</span><br/><strong>Header logo installed:</strong> No<br/><strong>Controlled amendment:</strong> OCRA V.02 additions installed in Sections 18, 19, and 22; Architect-authorized evolving Caberis Signature Interface System added as Section 23<br/><strong>Original V.01 doctrine altered:</strong> No</div></div>
+</section>
+</main>
+</div>
+<footer>OCRA RULE · ONE CODE RULE ALL · CABERIS GOVERNANCE · V.02</footer>
+</div>
+<script>
+const search=document.getElementById('search');
+search.addEventListener('input',()=>{
+  const q=search.value.trim().toLowerCase();
+  document.querySelectorAll('.navItem').forEach(a=>a.classList.toggle('hidden',q&&!a.textContent.toLowerCase().includes(q)));
+  document.querySelectorAll('.searchable').forEach(s=>s.classList.toggle('hidden',q&&!s.textContent.toLowerCase().includes(q)));
+});
+let expanded=true;
+document.getElementById('expandBtn').addEventListener('click',function(){
+  expanded=!expanded;
+  document.querySelectorAll('.doctrine-panel').forEach(x=>x.classList.toggle('hidden',!expanded));
+  this.textContent=expanded?'Collapse Sections':'Expand Sections';
+});
+document.getElementById('auditCount').textContent='616 / 616';
+</script>
+<button aria-controls="cbrQuickGlossary" aria-expanded="false" class="cbr-qg-toggle" type="button">Quick Glossary</button><nav aria-label="Quick glossary" class="cbr-qg" id="cbrQuickGlossary"><div class="cbr-qg-title"><span>Quick Glossary</span><span>27</span></div><a data-target="ocra-rule-foundation" href="#ocra-rule-foundation">OCRA RULE FOUNDATION</a><a data-target="core" href="#core"><span class="cbr-qg-code">CORE RULE</span><span class="cbr-qg-name">One Code Rule All</span></a><a data-target="anti-drift" href="#anti-drift"><span class="cbr-qg-code">LOCKED CONTROL</span><span class="cbr-qg-name">OCRA Principle and Anti-Drift Rules</span></a><a data-target="section-1" href="#section-1"><span class="cbr-qg-code">SECTION 01</span><span class="cbr-qg-name">Permanent global page rule</span></a><a data-target="section-2" href="#section-2"><span class="cbr-qg-code">SECTION 02</span><span class="cbr-qg-name">OCRA requirement</span></a><a data-target="section-3" href="#section-3"><span class="cbr-qg-code">SECTION 03</span><span class="cbr-qg-name">Master page width and positioning</span></a><a data-target="section-4" href="#section-4"><span class="cbr-qg-code">SECTION 04</span><span class="cbr-qg-name">Master color system</span></a><a data-target="section-5" href="#section-5"><span class="cbr-qg-code">SECTION 05</span><span class="cbr-qg-name">Background parameters</span></a><a data-target="section-6" href="#section-6"><span class="cbr-qg-code">SECTION 06</span><span class="cbr-qg-name">Glassmorphism parameters</span></a><a data-target="section-7" href="#section-7"><span class="cbr-qg-code">SECTION 07</span><span class="cbr-qg-name">Shadow parameters</span></a><a data-target="section-8" href="#section-8"><span class="cbr-qg-code">SECTION 08</span><span class="cbr-qg-name">Hover and lift behaviour</span></a><a data-target="section-9" href="#section-9"><span class="cbr-qg-code">SECTION 09</span><span class="cbr-qg-name">Typography</span></a><a data-target="section-10" href="#section-10"><span class="cbr-qg-code">SECTION 10</span><span class="cbr-qg-name">Page-opening structure</span></a><a data-target="section-11" href="#section-11"><span class="cbr-qg-code">SECTION 11</span><span class="cbr-qg-name">Mandatory page-content parameters</span></a><a data-target="section-12" href="#section-12"><span class="cbr-qg-code">SECTION 12</span><span class="cbr-qg-name">Permanent disclosure and protection logos</span></a><a data-target="section-13" href="#section-13"><span class="cbr-qg-code">SECTION 13</span><span class="cbr-qg-name">Permanent legal/protection section</span></a><a data-target="section-14" href="#section-14"><span class="cbr-qg-code">SECTION 14</span><span class="cbr-qg-name">Permanent lower/footer logo</span></a><a data-target="section-15" href="#section-15"><span class="cbr-qg-code">SECTION 15</span><span class="cbr-qg-name">Permanent footer text</span></a><a data-target="section-16" href="#section-16"><span class="cbr-qg-code">SECTION 16</span><span class="cbr-qg-name">Final animated logo addresses</span></a><a data-target="section-17" href="#section-17"><span class="cbr-qg-code">SECTION 17</span><span class="cbr-qg-name">Market-page disclosure framework</span></a><a data-target="section-18" href="#section-18"><span class="cbr-qg-code">SECTION 18</span><span class="cbr-qg-name">Third-party component requirements</span></a><a data-target="section-19" href="#section-19"><span class="cbr-qg-code">SECTION 19</span><span class="cbr-qg-name">Responsive parameters</span></a><a data-target="section-20" href="#section-20"><span class="cbr-qg-code">SECTION 20</span><span class="cbr-qg-name">Accessibility and structural controls</span></a><a data-target="section-21" href="#section-21"><span class="cbr-qg-code">SECTION 21</span><span class="cbr-qg-name">Permanent content-protection rules</span></a><a data-target="section-22" href="#section-22"><span class="cbr-qg-code">SECTION 22</span><span class="cbr-qg-name">Proposed permanent page-creation checklist</span></a><a data-target="section-23" href="#section-23"><span class="cbr-qg-code">SECTION 23</span><span class="cbr-qg-name">Caberis Signature Interface System</span></a><a data-target="source-audit" href="#source-audit"><span class="cbr-qg-code">SOURCE AUDIT</span><span class="cbr-qg-name">Word-for-word installation status</span></a><a class="cbr-qg-top" href="#top">Return to Top</a></nav>
+<script id="cbr-doctrine-readiness-script">
+(()=>{
+  const nav=document.querySelector('.cbr-qg');
+  const toggle=document.querySelector('.cbr-qg-toggle');
+  if(toggle&&nav){toggle.addEventListener('click',()=>{const open=nav.classList.toggle('is-open');toggle.setAttribute('aria-expanded',String(open));});}
+  document.querySelectorAll('.cbr-qg a[href^="#"]').forEach(a=>a.addEventListener('click',()=>{if(nav)nav.classList.remove('is-open');if(toggle)toggle.setAttribute('aria-expanded','false');}));
+  const links=[...document.querySelectorAll('.cbr-qg a[data-target]')];
+  const map=new Map(links.map(a=>[a.dataset.target,a]));
+  const sections=[...map.keys()].map(id=>document.getElementById(id)).filter(Boolean);
+  if('IntersectionObserver' in window){
+    const io=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){links.forEach(a=>a.classList.remove('is-active'));const a=map.get(e.target.id);if(a)a.classList.add('is-active');}})},{rootMargin:'-18% 0px -68% 0px',threshold:0});
+    sections.forEach(s=>io.observe(s));
+  }
+})();
+</script>
+<script id="cbr-qg-scroll-correction">
+(()=>{
+  // CABERIS QUICK GLOSSARY ACTIVE FOLLOW CORRECTION
+  const glossary=document.querySelector('.cbr-qg');
+  if(!glossary)return;
+  const activeLinks=[...glossary.querySelectorAll('a[data-target]')];
+  const keepActiveVisible=()=>{
+    const active=glossary.querySelector('a.is-active');
+    if(active) active.scrollIntoView({block:'nearest',inline:'nearest',behavior:'smooth'});
+  };
+  const observer=new MutationObserver(mutations=>{
+    if(mutations.some(m=>m.type==='attributes'&&m.attributeName==='class')) keepActiveVisible();
+  });
+  activeLinks.forEach(a=>observer.observe(a,{attributes:true,attributeFilter:['class']}));
+  glossary.addEventListener('wheel',e=>e.stopPropagation(),{passive:true});
+  glossary.addEventListener('keydown',e=>{
+    if(['ArrowDown','ArrowUp','PageDown','PageUp','Home','End'].includes(e.key)) e.stopPropagation();
+  });
+})();
+</script>
+
+<script id="cbr-left-index-scroll-correction">
+(()=>{
+  // CABERIS LEFT RULE INDEX ACTIVE FOLLOW
+  const getRoots=()=>[
+    ...document.querySelectorAll('.layout > aside.panel .body'),
+    ...document.querySelectorAll('nav.side:not(.cbr-qg)')
+  ].filter((x,i,a)=>a.indexOf(x)===i);
+
+  const validLinks=root=>[...root.querySelectorAll('a[href^="#"]')].filter(a=>{
+    const id=decodeURIComponent((a.getAttribute('href')||'').slice(1));
+    return id && document.getElementById(id);
+  });
+
+  const setupRoot=root=>{
+    if(root.dataset.cbrLeftReady==='1')return;
+    root.dataset.cbrLeftReady='1';
+    const refresh=()=>{
+      const links=validLinks(root);
+      if(!links.length)return;
+      const pairs=links.map(a=>({a,id:decodeURIComponent(a.getAttribute('href').slice(1))}));
+      const setActive=id=>{
+        pairs.forEach(({a,id:linkId})=>{
+          const on=linkId===id;
+          a.classList.toggle('is-active',on);
+          if(on)a.setAttribute('aria-current','true');else a.removeAttribute('aria-current');
+        });
+        const active=pairs.find(x=>x.id===id)?.a;
+        if(active)active.scrollIntoView({block:'nearest',inline:'nearest',behavior:'smooth'});
+      };
+      const sections=pairs.map(x=>document.getElementById(x.id)).filter(Boolean);
+      if(!sections.length)return;
+      const observer=new IntersectionObserver(entries=>{
+        const visible=entries.filter(e=>e.isIntersecting).sort((a,b)=>Math.abs(a.boundingClientRect.top)-Math.abs(b.boundingClientRect.top));
+        if(visible[0])setActive(visible[0].target.id);
+      },{root:null,rootMargin:'-18% 0px -68% 0px',threshold:[0,0.01]});
+      sections.forEach(s=>observer.observe(s));
+      links.forEach(a=>a.addEventListener('click',()=>setActive(decodeURIComponent(a.getAttribute('href').slice(1)))));
+    };
+    refresh();
+    new MutationObserver(()=>refresh()).observe(root,{childList:true,subtree:true});
+    root.addEventListener('wheel',e=>e.stopPropagation(),{passive:true});
+  };
+
+  const initialize=()=>getRoots().forEach(setupRoot);
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',initialize,{once:true});else initialize();
+  new MutationObserver(initialize).observe(document.body,{childList:true,subtree:true});
+})();
+</script>
+
+<style id="cac-return-style">
+#cacReturnLighthouse{position:fixed;z-index:2147483647;right:max(14px,env(safe-area-inset-right));bottom:max(14px,env(safe-area-inset-bottom));display:flex;align-items:center;gap:9px;padding:10px 13px 10px 10px;border:1px solid rgba(160,225,255,.62);border-radius:999px;background:linear-gradient(145deg,rgba(13,24,31,.96),rgba(2,7,11,.97));color:#eefbff;text-decoration:none;font:700 11px/1.1 Arial,Helvetica,sans-serif;letter-spacing:.11em;box-shadow:0 0 0 1px rgba(255,255,255,.035) inset,0 12px 34px rgba(0,0,0,.55),0 0 22px rgba(89,199,241,.16);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease}
+#cacReturnLighthouse:hover,#cacReturnLighthouse:focus-visible{transform:translateY(-2px);border-color:#d9f6ff;box-shadow:0 14px 34px rgba(0,0,0,.58),0 0 28px rgba(114,215,255,.30);outline:none}
+#cacReturnLighthouse .cacLamp{position:relative;width:25px;height:30px;flex:0 0 25px}
+#cacReturnLighthouse .cacLamp:before{content:"";position:absolute;left:8px;top:2px;width:9px;height:10px;border:1px solid #d7f7ff;border-radius:4px 4px 2px 2px;background:radial-gradient(circle at 50% 45%,#fff 0 20%,#aeefff 26%,#52bddf 48%,rgba(64,171,209,.18) 70%);box-shadow:0 0 13px #aeefff}
+#cacReturnLighthouse .cacLamp:after{content:"";position:absolute;left:5px;bottom:0;width:15px;height:18px;clip-path:polygon(27% 0,73% 0,100% 100%,0 100%);background:linear-gradient(90deg,#1c2d36,#718793 50%,#17262e);border-bottom:2px solid #d3e7ef}
+#cacReturnLighthouse .cacBeam{position:absolute;left:-9px;top:4px;width:43px;height:8px;background:linear-gradient(90deg,transparent,rgba(174,239,255,.34),transparent);filter:blur(2px);animation:cacBeam 3.8s ease-in-out infinite}
+@keyframes cacBeam{0%,100%{opacity:.24;transform:scaleX(.78)}50%{opacity:.72;transform:scaleX(1.08)}}
+@media(max-width:620px){#cacReturnLighthouse{right:max(10px,env(safe-area-inset-right));bottom:max(10px,env(safe-area-inset-bottom));padding:9px 11px 9px 9px;font-size:10px}}
+@media(prefers-reduced-motion:reduce){#cacReturnLighthouse .cacBeam{animation:none}}
+</style>
+
+<a id="cacReturnLighthouse" href="../CAC.html#hub" aria-label="Return to Caberis Architectural Console">
+  <span class="cacLamp" aria-hidden="true"><span class="cacBeam"></span></span>
+  <span>BACK TO CAC</span>
+</a>
+</body></html>

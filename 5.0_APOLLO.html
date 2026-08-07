@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>ORION — Caberis Intelligence Convergence and Layering · Memory Register · V.00</title>
+<style>
+:root{--bg:#020914;--p:#071522;--p2:#0a1d2d;--line:#245b75;--c:#18baff;--c2:#82ddff;--t:#eef8fc;--m:#93afbd;--ok:#35d28b;--w:#ffc857;--bad:#ff6262;--violet:#c7a8ff}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:linear-gradient(180deg,#01060d,#03111d 55%,#020811);color:var(--t);font:14px Inter,Segoe UI,Arial,sans-serif}.shell{max-width:1450px;margin:auto;padding:18px}header{position:sticky;top:6px;z-index:20;display:flex;gap:16px;align-items:center;padding:15px 18px;background:#061522f2;border:1px solid var(--line);border-radius:14px;box-shadow:0 16px 45px #0008}h1{font-size:clamp(20px,3vw,34px);margin:0;letter-spacing:.045em}header p{margin:4px 0 0;color:var(--c2);letter-spacing:.12em;font-size:11px}.actions{margin-left:auto;display:flex;gap:8px;flex-wrap:wrap}button,input,textarea{font:inherit}button{border:1px solid #1985b9;background:#08618a;color:#fff;border-radius:8px;padding:9px 12px;cursor:pointer}button.secondary{background:#071725;border-color:#315d72;color:#d8edf5}button.warn{background:#5a4210;border-color:#ad8127}.layout{display:grid;grid-template-columns:330px 1fr;gap:14px;margin-top:14px}.panel{background:linear-gradient(145deg,#081926,#030d16);border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:0 15px 40px #0006}.ph{padding:12px 14px;background:#0c2a3c88;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;gap:10px}.ph h2{font-size:14px;letter-spacing:.08em;margin:0}.body{padding:14px}aside{position:sticky;top:102px;align-self:start;max-height:calc(100vh - 118px);overflow:auto}#search{width:100%;padding:10px;border:1px solid #315d72;background:#020b12;color:white;border-radius:8px;margin-bottom:8px}.navItem{display:block;padding:9px;border:1px solid #1c4458;background:#06141f;border-radius:8px;margin:6px 0;color:#eef8fc;text-decoration:none}.navItem:hover,.navItem:focus-visible{border-color:var(--c);background:#0a2638;outline:none}.code{font-weight:700;color:var(--c2);font-size:12px}.name{margin-top:3px;font-size:12px}.pill{font-size:10px;border:1px solid #315d72;border-radius:999px;padding:3px 7px;color:var(--m)}main{display:grid;gap:14px}.metaGrid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.meta{border:1px solid #24556c;border-radius:9px;padding:11px;background:#061520}.meta b{display:block;color:var(--c2);font-size:11px;margin-bottom:4px}.locked{border-left:5px solid var(--w);padding:16px;background:#231c0c;border-radius:9px;line-height:1.7}.locked b{color:#ffe099}.boundary{border-left:5px solid var(--bad);padding:16px;background:#2a1013;border-radius:9px;line-height:1.7}.boundary b{color:#ffb2b2}.known{border-left:5px solid var(--ok);padding:16px;background:#07251b;border-radius:9px;line-height:1.7}.known b{color:#8af0bd}.doctrine{margin:0;white-space:pre-wrap;overflow-wrap:anywhere;font:14px/1.72 Arial,Helvetica,sans-serif;color:#edf7fb;background:#04111b;border:1px solid #1d4b61;border-radius:10px;padding:18px}.doctrine-panel{scroll-margin-top:100px}.source-note{color:var(--m);font-size:12px;line-height:1.6;margin-top:10px}.hidden{display:none!important}.statement{font-weight:800;color:#c6f1ff}.tag{display:inline-block;margin:4px 6px 4px 0;padding:5px 8px;border:1px solid #355f75;border-radius:999px;background:#061723;color:#cceffc;font-size:11px}.matrix{width:100%;border-collapse:collapse}.matrix th,.matrix td{border:1px solid #28566e;padding:10px;text-align:left;vertical-align:top}.matrix th{background:#0a2638;color:#bcecff}.matrix td{background:#04111b}.notes{width:100%;min-height:190px;resize:vertical;padding:12px;border-radius:9px;border:1px solid #315d72;background:#020b12;color:#eef8fc;line-height:1.55}.note-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}.small{font-size:11px;color:var(--m);line-height:1.55}.status-line{display:flex;gap:8px;flex-wrap:wrap}.status-chip{padding:7px 9px;border-radius:8px;border:1px solid #385e72;background:#061520;font-size:11px}.status-chip.provisional{border-color:#9b7423;color:#ffe3a0}.status-chip.restricted{border-color:#8d3b44;color:#ffc0c5}.status-chip.recovery{border-color:#317f63;color:#a6f0d1}footer{text-align:center;color:#6f8d9d;font-size:11px;margin:16px}
+@media(max-width:1000px){.layout{grid-template-columns:1fr}aside{position:static;max-height:none}.metaGrid{grid-template-columns:1fr 1fr}}
+@media(max-width:700px){.matrix,.matrix tbody,.matrix tr,.matrix td,.matrix th{display:block;width:100%}.matrix thead{display:none}.matrix tr{margin-bottom:10px;border:1px solid #28566e;border-radius:9px;overflow:hidden}.matrix td{border:0;border-bottom:1px solid #1e4559}.matrix td:last-child{border-bottom:0}.matrix td::before{content:attr(data-label);display:block;color:var(--c2);font-size:10px;font-weight:800;letter-spacing:.08em;margin-bottom:5px;text-transform:uppercase}}
+@media(max-width:620px){.shell{padding:8px}header{position:relative;flex-wrap:wrap}.actions{margin-left:0}.metaGrid{grid-template-columns:1fr}.doctrine{padding:14px;font-size:13px;line-height:1.65}.ph{align-items:flex-start}.body{padding:11px}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
+@media print{body{background:#fff;color:#111}.shell{max-width:none;padding:0}header{position:static;background:#071522;box-shadow:none}.actions,aside,#search,.note-actions{display:none!important}.layout{display:block}.panel{box-shadow:none;break-inside:auto;margin-bottom:12px}.doctrine,.matrix td{background:#fff;color:#111;border-color:#bbb}.locked,.known,.boundary,.meta{background:#fff;color:#111}.ph{background:#eef5f8;color:#111}.notes{border:1px solid #bbb;color:#111;background:#fff}}
+</style>
+<style id="cbr-doctrine-readiness-style">
+/* CABERIS PROJECT DOCTRINE — ARCHITECT CONSOLE READINESS LAYER */
+:root{--cbr-qg-bg:rgba(4,17,27,.96);--cbr-qg-line:#28566e;--cbr-qg-text:#eef8fc;--cbr-qg-accent:#82ddff;--cbr-qg-active:#18baff}
+.cbr-doctrine-ribbon{position:relative;z-index:30;max-width:1450px;margin:10px auto 0;padding:9px 14px;border:1px solid var(--cbr-qg-line);border-radius:10px;background:linear-gradient(90deg,rgba(6,21,34,.96),rgba(10,38,56,.9));color:var(--cbr-qg-text);font:700 11px/1.4 Inter,Segoe UI,Arial,sans-serif;letter-spacing:.12em;text-transform:uppercase;box-shadow:0 10px 30px #0005}
+.cbr-doctrine-ribbon span{color:var(--cbr-qg-accent)}
+.cbr-qg-toggle{position:fixed;right:14px;top:14px;z-index:1001;display:none;border:1px solid var(--cbr-qg-line);border-radius:9px;background:var(--cbr-qg-bg);color:var(--cbr-qg-text);padding:9px 11px;font:700 11px Inter,Segoe UI,Arial,sans-serif;letter-spacing:.08em;cursor:pointer}
+.cbr-qg{position:fixed;right:14px;top:82px;z-index:1000;width:220px;max-height:calc(100vh - 100px);overflow:auto;padding:10px;border:1px solid var(--cbr-qg-line);border-radius:12px;background:var(--cbr-qg-bg);box-shadow:0 18px 45px #0009;backdrop-filter:blur(12px)}
+.cbr-qg-title{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:4px 5px 9px;color:var(--cbr-qg-accent);font:800 11px Inter,Segoe UI,Arial,sans-serif;letter-spacing:.1em;text-transform:uppercase;border-bottom:1px solid var(--cbr-qg-line)}
+.cbr-qg a{display:block;margin-top:6px;padding:7px 8px;border:1px solid transparent;border-radius:7px;color:var(--cbr-qg-text);text-decoration:none;font:600 11px/1.3 Inter,Segoe UI,Arial,sans-serif}
+.cbr-qg a:hover,.cbr-qg a:focus-visible{border-color:var(--cbr-qg-active);background:rgba(24,186,255,.10);outline:none}
+.cbr-qg a.is-active{border-color:var(--cbr-qg-active);background:rgba(24,186,255,.17);color:#fff}
+.cbr-qg-top{margin-top:8px!important;text-align:center;border-color:var(--cbr-qg-line)!important;color:var(--cbr-qg-accent)!important}
+@media(max-width:1180px){.cbr-qg-toggle{display:block}.cbr-qg{top:58px;transform:translateX(calc(100% + 25px));transition:transform .2s ease}.cbr-qg.is-open{transform:translateX(0)}}
+@media(max-width:620px){.cbr-doctrine-ribbon{margin:6px 8px 0;padding:8px 10px;font-size:9px}.cbr-qg{right:8px;width:min(88vw,280px)}.cbr-qg-toggle{right:8px;top:8px}}
+@media print{.cbr-doctrine-ribbon,.cbr-qg,.cbr-qg-toggle{display:none!important}}
+</style>
+<style id="cbr-qg-scroll-correction-style">
+/* CABERIS QUICK GLOSSARY SCROLL CORRECTION */
+.cbr-qg{
+  display:flex!important;
+  flex-direction:column!important;
+  overflow-y:auto!important;
+  overflow-x:hidden!important;
+  overscroll-behavior:contain;
+  scrollbar-width:thin;
+  scrollbar-color:#2f8fb6 #06131d;
+  padding-bottom:10px!important;
+}
+.cbr-qg::-webkit-scrollbar{width:8px}
+.cbr-qg::-webkit-scrollbar-track{background:#06131d;border-radius:999px}
+.cbr-qg::-webkit-scrollbar-thumb{background:#2f8fb6;border-radius:999px;border:2px solid #06131d}
+.cbr-qg-title{position:sticky!important;top:-10px;z-index:3;background:linear-gradient(180deg,#082234 86%,#082234ee);padding-top:10px!important;padding-bottom:9px!important;margin-top:-10px!important}
+.cbr-qg a{flex:0 0 auto}
+.cbr-qg .cbr-qg-top{position:sticky!important;bottom:-10px;z-index:3;background:#082234!important;margin-bottom:-10px!important;padding-bottom:12px!important;box-shadow:0 -10px 18px #020812e6}
+.cbr-qg a .cbr-qg-code{display:block;color:#82ddff;font-size:9px;font-weight:800;letter-spacing:.12em;margin-bottom:2px}
+.cbr-qg a .cbr-qg-name{display:block;white-space:normal;line-height:1.25}
+.cbr-qg a.is-active{scroll-margin-block:90px}
+@media(min-width:1181px){.cbr-qg{max-height:calc(100vh - 96px)!important}}
+</style><style id="cbr-left-index-scroll-style">
+/* CABERIS LEFT RULE INDEX FULL SCROLL CORRECTION */
+@media (min-width:1001px){
+  .layout > aside.panel{
+    position:sticky!important;
+    top:102px!important;
+    align-self:start!important;
+    height:calc(100vh - 118px)!important;
+    max-height:calc(100vh - 118px)!important;
+    min-height:0!important;
+    display:flex!important;
+    flex-direction:column!important;
+    overflow:hidden!important;
+  }
+  .layout > aside.panel > .ph{
+    flex:0 0 auto!important;
+  }
+  .layout > aside.panel > .body{
+    flex:1 1 auto!important;
+    min-height:0!important;
+    overflow-y:auto!important;
+    overflow-x:hidden!important;
+    overscroll-behavior:contain;
+    scrollbar-width:thin;
+    scrollbar-color:#2f8fb6 #06131d;
+    padding-bottom:18px!important;
+  }
+  .layout > aside.panel > .body::-webkit-scrollbar,
+  nav.side::-webkit-scrollbar{width:8px}
+  .layout > aside.panel > .body::-webkit-scrollbar-track,
+  nav.side::-webkit-scrollbar-track{background:#06131d;border-radius:999px}
+  .layout > aside.panel > .body::-webkit-scrollbar-thumb,
+  nav.side::-webkit-scrollbar-thumb{background:#2f8fb6;border-radius:999px;border:2px solid #06131d}
+  .layout > aside.panel > .body > input:first-child,
+  .layout > aside.panel > .body > #search{
+    position:sticky!important;
+    top:0!important;
+    z-index:4!important;
+    box-shadow:0 8px 14px #020812cc!important;
+  }
+  nav.side:not(.cbr-qg){
+    position:sticky!important;
+    top:18px!important;
+    align-self:start!important;
+    height:calc(100vh - 36px)!important;
+    max-height:calc(100vh - 36px)!important;
+    min-height:0!important;
+    overflow-y:auto!important;
+    overflow-x:hidden!important;
+    overscroll-behavior:contain;
+    scrollbar-width:thin;
+    scrollbar-color:#2f8fb6 #06131d;
+    padding-bottom:18px!important;
+  }
+}
+.layout > aside.panel .navItem.is-active,
+.layout > aside.panel a[aria-current="true"],
+nav.side:not(.cbr-qg) a.is-active,
+nav.side:not(.cbr-qg) a[aria-current="true"]{
+  border-color:#18baff!important;
+  background:#0b2b40!important;
+  box-shadow:inset 3px 0 0 #82ddff!important;
+}
+@media(max-width:1000px){
+  .layout > aside.panel{
+    position:static!important;
+    height:auto!important;
+    max-height:none!important;
+    overflow:visible!important;
+  }
+  .layout > aside.panel > .body{
+    max-height:none!important;
+    overflow:visible!important;
+  }
+  nav.side:not(.cbr-qg){
+    position:static!important;
+    height:auto!important;
+    max-height:none!important;
+    overflow:visible!important;
+  }
+}
+</style></head>
+<body id="top"><div class="cbr-doctrine-ribbon">CABERIS PROJECT DOCTRINE · ARCHITECT CONSOLE READY <span>· PRESENTATION LAYER ONLY</span></div><div class="shell">
+<header>
+<div><h1>ORION</h1><p>CABERIS INTELLIGENCE CONVERGENCE AND LAYERING · MEMORY AND SOURCE RECOVERY REGISTER · V.00</p></div>
+<div class="actions"><button class="secondary" id="expandBtn">Collapse Sections</button><button class="secondary" onclick="window.print()">Print / PDF</button></div>
+</header>
+<section class="panel" id="orion-foundation" style="margin-top:14px">
+<div class="ph"><h2>ORION FOUNDATION</h2><span class="pill">V.00</span></div>
+<div class="body">
+<div class="metaGrid">
+<div class="meta"><b>WORKING TITLE</b>ORION — Caberis Intelligence Convergence and Layering</div>
+<div class="meta"><b>DOCUMENT TYPE</b>Memory and Source Recovery Register</div>
+<div class="meta"><b>REVISION</b>V.00</div>
+<div class="meta"><b>STATUS</b>Provisional · Not Yet Active Governance</div>
+</div>
+<div class="status-line" style="margin-top:10px"><span class="status-chip provisional">DEEP DIVE PENDING</span><span class="status-chip recovery">PACKET RECOVERY OPEN</span><span class="status-chip restricted">ARCHITECT-CONTROLLED</span></div>
+<div class="source-note">This file preserves only the ORION concepts recovered from the current discussion. It is not the final ORION doctrine, activation authority, convergence protocol, or security specification. Missing packet content must be recovered and installed through a later controlled revision.</div>
+</div>
+</section>
+<div class="layout">
+<aside class="panel">
+<div class="ph"><h2>ORION INDEX</h2><span class="pill">10 Sections</span></div>
+<div class="body">
+<input aria-label="Search ORION register" id="search" placeholder="Search term or concept"/>
+<div id="nav">
+<a class="navItem" href="#purpose"><div class="code">01</div><div class="name">Purpose and present boundary</div></a>
+<a class="navItem" href="#working-definition"><div class="code">02</div><div class="name">Working definition</div></a>
+<a class="navItem" href="#recovered"><div class="code">03</div><div class="name">Recovered architecture terms</div></a>
+<a class="navItem" href="#principles"><div class="code">04</div><div class="name">Recovered principles</div></a>
+<a class="navItem" href="#relationship"><div class="code">05</div><div class="name">Provisional relationship map</div></a>
+<a class="navItem" href="#unresolved"><div class="code">06</div><div class="name">Unresolved items</div></a>
+<a class="navItem" href="#packets"><div class="code">07</div><div class="name">Packet recovery register</div></a>
+<a class="navItem" href="#deep-dive"><div class="code">08</div><div class="name">Future deep-dive sequence</div></a>
+<a class="navItem" href="#notes"><div class="code">09</div><div class="name">Architect recovery notes</div></a>
+<a class="navItem" href="#release"><div class="code">10</div><div class="name">Release and activation boundary</div></a>
+</div>
+</div>
+</aside>
+<main>
+<section class="panel doctrine-panel searchable" id="purpose">
+<div class="ph"><h2>01 — PURPOSE AND PRESENT BOUNDARY</h2><span class="pill">MEMORY CONTROL</span></div>
+<div class="body">
+<div class="locked"><b>Present purpose:</b> Preserve ORION as a named Caberis intelligence-convergence and layering authority so the concept, relationships, security boundaries, and buried terminology are not lost while the original packets are being recovered.</div>
+<div class="boundary" style="margin-top:10px"><b>Current boundary:</b> ORION is not yet approved as an active governance system. This register must not be used to claim full convergence, activate protected architecture, expose restricted doctrine, or replace missing source packets.</div>
+</div>
+</section>
+<section class="panel doctrine-panel searchable" id="working-definition">
+<div class="ph"><h2>02 — WORKING DEFINITION</h2><span class="pill">PROVISIONAL</span></div>
+<div class="body"><pre class="doctrine">ORION — Caberis Intelligence Convergence and Layering
+
+Working purpose:
+
+ORION is the proposed Caberis authority for coordinating intelligence layers across doctrines, governance systems, the Key System, Honeycomb architecture, OCRABALL compartments, INTERIM, convergence controls, Vault within a Vault, protected identity, and controlled output release.
+
+ORION is not intended to replace the authority of any specialist doctrine or governance system.
+
+ORION may later identify, sequence, connect, and coordinate applicable layers while preserving compartment boundaries and Architect authority.
+
+Provisional governing boundary:
+
+ORION may coordinate the layers, but it must not collapse compartments, expose protected doctrine, or form full convergence without Architect authority.</pre></div>
+</section>
+<section class="panel doctrine-panel searchable" id="recovered">
+<div class="ph"><h2>03 — RECOVERED ARCHITECTURE TERMS</h2><span class="pill">KNOWN TERMS</span></div>
+<div class="body">
+<div class="known"><b>Recovered from prior discussion:</b> The following terms and relationships are remembered, but their complete definitions and authoritative wording still require packet recovery.</div>
+<div style="margin-top:12px">
+<span class="tag">Doctrines</span><span class="tag">Governance Systems</span><span class="tag">Key System</span><span class="tag">Honeycomb</span><span class="tag">Honeycomb within Honeycomb</span><span class="tag">OCRABALL</span><span class="tag">Compartmentalization</span><span class="tag">Partial Convergence</span><span class="tag">Verified Convergence</span><span class="tag">INTERIM</span><span class="tag">Vault within a Vault</span><span class="tag">Protected Identity</span><span class="tag">Human Authorization</span><span class="tag">Controlled Output Release</span><span class="tag">Synthetic Intelligence Motherboard</span><span class="tag">K1 · K2 · K3</span>
+</div>
+<pre class="doctrine" style="margin-top:12px">Recovered structural concepts:
+
+• Honeycomb inside the honeycomb.
+• Vault within the vault.
+• A triple-security system, with the third layer intentionally undisclosed until the Flag and House are built.
+• OCRABALLS separated by function before later verified convergence.
+• A Key System formed as layered authority: outer shell, inner chamber, and intelligence core.
+• K1, K2, and K3 embedded inside the key where possible.
+• Three working nodes plus one main connector or junction per honeycomb.
+• The accepted working title: CABERIS SYNTHETIC INTELLIGENCE MOTHERBOARD.
+• Human judgment remains outside the automated system boundary.</pre>
+</div>
+</section>
+<section class="panel doctrine-panel searchable" id="principles">
+<div class="ph"><h2>04 — RECOVERED PRINCIPLES</h2><span class="pill">DO NOT EXPAND WITHOUT SOURCE</span></div>
+<div class="body"><pre class="doctrine">Recovered principles:
+
+1. Compartment first. Convergence later.
+
+2. Full convergence must not be formed casually.
+
+3. The first OCRA Ball or Genesis-class convergence must not be casually re-uploaded or propagated.
+
+4. Derived active keys or domain keys may be used for compartmentalized partial convergence.
+
+5. Trusted output requires convergence of three trust layers:
+   • doctrine layer;
+   • technical or archive layer;
+   • human operational judgment.
+
+6. Human judgment remains outside the automated system boundary.
+
+7. Protected identity and undisclosed security layers must not be inferred, reconstructed, or exposed without Architect authority.
+
+8. Missing source material must remain a recorded gap. It must not be replaced by invented architecture.</pre></div>
+</section>
+<section class="panel doctrine-panel searchable" id="relationship">
+<div class="ph"><h2>05 — PROVISIONAL RELATIONSHIP MAP</h2><span class="pill">FOR RECOVERY ONLY</span></div>
+<div class="body">
+<table class="matrix">
+<thead><tr><th>Layer or System</th><th>Remembered Role</th><th>Current Certainty</th><th>Recovery Need</th></tr></thead>
+<tbody>
+<tr><td data-label="Layer or System">Doctrines</td><td data-label="Remembered Role">Authority and governing principles used by the wider Caberis system.</td><td data-label="Current Certainty">Partial</td><td data-label="Recovery Need">Exact hierarchy, exposure rules, and activation conditions.</td></tr>
+<tr><td data-label="Layer or System">Governance Systems</td><td data-label="Remembered Role">Specialist controls that retain authority over their own functions.</td><td data-label="Current Certainty">Partial</td><td data-label="Recovery Need">Exact connection and conflict rules.</td></tr>
+<tr><td data-label="Layer or System">Key System</td><td data-label="Remembered Role">Layered authority using outer shell, inner chamber, intelligence core, and K1/K2/K3.</td><td data-label="Current Certainty">Partial</td><td data-label="Recovery Need">Key definitions, derivation, custody, and activation boundaries.</td></tr>
+<tr><td data-label="Layer or System">Honeycomb</td><td data-label="Remembered Role">Compartment architecture containing working nodes and a connector or junction.</td><td data-label="Current Certainty">Partial</td><td data-label="Recovery Need">Node identities, boundaries, routing, and nested-honeycomb rules.</td></tr>
+<tr><td data-label="Layer or System">OCRABALL</td><td data-label="Remembered Role">Function-separated intelligence compartment used before convergence.</td><td data-label="Current Certainty">Low to partial</td><td data-label="Recovery Need">Exact types, permanent identities, function mapping, and convergence permissions.</td></tr>
+<tr><td data-label="Layer or System">INTERIM</td><td data-label="Remembered Role">A named system or stage within the wider architecture.</td><td data-label="Current Certainty">Unresolved</td><td data-label="Recovery Need">Exact meaning, authority, and relationship to convergence.</td></tr>
+<tr><td data-label="Layer or System">Vault within a Vault</td><td data-label="Remembered Role">Nested protection and compartmentalized custody.</td><td data-label="Current Certainty">Partial</td><td data-label="Recovery Need">Exact security layers and access rules.</td></tr>
+<tr><td data-label="Layer or System">ORION</td><td data-label="Remembered Role">Proposed coordinator of intelligence convergence and layering.</td><td data-label="Current Certainty">Provisional only</td><td data-label="Recovery Need">Complete doctrine, activation authority, stop conditions, and output controls.</td></tr>
+</tbody>
+</table>
+</div>
+</section>
+<section class="panel doctrine-panel searchable" id="unresolved">
+<div class="ph"><h2>06 — UNRESOLVED ITEMS</h2><span class="pill">OPEN GAPS</span></div>
+<div class="body"><pre class="doctrine">The following matters are not yet recovered with sufficient certainty:
+
+• the exact meaning and role of INTERIM;
+• the complete convergence hierarchy;
+• the full relationship among the Key System, Honeycomb, OCRABALL, doctrines, governance systems, and Vault within a Vault;
+• the exact activation authority of ORION;
+• which layers ORION may see, call, derive, connect, or export;
+• the protected identity structure;
+• the undisclosed third security layer;
+• the difference between partial, derived, verified, and full convergence;
+• the exact K1, K2, and K3 definitions;
+• the boundaries of the Caberis Synthetic Intelligence Motherboard;
+• the permanent OCRABALL identities and functional compartments;
+• the conflict, stop, return, and Architect-approval conditions;
+• the exposure classification for each recovered packet;
+• the rules governing AI access, packet propagation, and controlled release.
+
+These gaps must remain visible until authoritative packets are recovered.</pre></div>
+</section>
+<section class="panel doctrine-panel searchable" id="packets">
+<div class="ph"><h2>07 — PACKET RECOVERY REGISTER</h2><span class="pill">TO BE COMPLETED</span></div>
+<div class="body">
+<table class="matrix">
+<thead><tr><th>Recovery Item</th><th>Status</th><th>Required Source</th><th>Installation Action</th></tr></thead>
+<tbody>
+<tr><td data-label="Recovery Item">ORION source discussions and packets</td><td data-label="Status">Not yet assembled</td><td data-label="Required Source">Original conversations, notes, exports, or approved packet files</td><td data-label="Installation Action">Install exact content into controlled ORION revision</td></tr>
+<tr><td data-label="Recovery Item">INTERIM</td><td data-label="Status">Definition unresolved</td><td data-label="Required Source">Original INTERIM packet or authoritative discussion</td><td data-label="Installation Action">Define role and boundary without inference</td></tr>
+<tr><td data-label="Recovery Item">Key System</td><td data-label="Status">Partially remembered</td><td data-label="Required Source">Key doctrine, diagrams, K1/K2/K3 records</td><td data-label="Installation Action">Record exact key hierarchy and custody rules</td></tr>
+<tr><td data-label="Recovery Item">Honeycomb architecture</td><td data-label="Status">Partially remembered</td><td data-label="Required Source">Honeycomb maps, node records, connector definitions</td><td data-label="Installation Action">Install controlled architecture map</td></tr>
+<tr><td data-label="Recovery Item">OCRABALL system</td><td data-label="Status">Partially remembered</td><td data-label="Required Source">OCRABALL packets, identities, function records</td><td data-label="Installation Action">Register compartments and convergence permissions</td></tr>
+<tr><td data-label="Recovery Item">Convergence doctrine</td><td data-label="Status">Incomplete</td><td data-label="Required Source">Partial/full/verified convergence rules</td><td data-label="Installation Action">Define stages, stop conditions, and Architect authority</td></tr>
+<tr><td data-label="Recovery Item">Vault within a Vault</td><td data-label="Status">Partially remembered</td><td data-label="Required Source">Security and custody doctrine</td><td data-label="Installation Action">Install only after exposure classification review</td></tr>
+<tr><td data-label="Recovery Item">Synthetic Intelligence Motherboard</td><td data-label="Status">Title remembered</td><td data-label="Required Source">Approved motherboard architecture and node mapping</td><td data-label="Installation Action">Connect only after packet verification</td></tr>
+</tbody>
+</table>
+</div>
+</section>
+<section class="panel doctrine-panel searchable" id="deep-dive">
+<div class="ph"><h2>08 — FUTURE DEEP-DIVE SEQUENCE</h2><span class="pill">PROPOSED WORK ORDER</span></div>
+<div class="body"><pre class="doctrine">Controlled recovery sequence:
+
+1. Recover the original packets, notes, exports, diagrams, and authoritative conversation sections.
+2. Register each source without rewriting it.
+3. Identify duplicated, conflicting, superseded, and unresolved content.
+4. Define the permanent identities of INTERIM, Key System, Honeycomb, OCRABALL, Convergence, and Vault within a Vault.
+5. Reconstruct the hierarchy and boundaries before defining ORION authority.
+6. Separate public, controlled, restricted, and private Architect material.
+7. Define partial, derived, verified, and full convergence.
+8. Define ORION inputs, permissions, stop conditions, and prohibited actions.
+9. Define human authorization and controlled release requirements.
+10. Produce the first controlled ORION doctrine only after Architect validation.
+
+No recovered fragment should be promoted into final doctrine merely because it appears plausible.</pre></div>
+</section>
+<section class="panel doctrine-panel searchable" id="notes">
+<div class="ph"><h2>09 — ARCHITECT RECOVERY NOTES</h2><span class="pill">LOCAL BROWSER NOTES</span></div>
+<div class="body">
+<textarea class="notes" id="recoveryNotes" placeholder="Paste recovered packet names, exact phrases, file locations, conversation references, or deep-dive notes here..."></textarea>
+<div class="note-actions"><button id="saveNotes">Save Notes Locally</button><button class="secondary" id="downloadNotes">Download Notes TXT</button><button class="warn" id="clearNotes">Clear Notes</button></div>
+<div class="small" id="noteStatus" style="margin-top:8px">Notes are stored only in this browser profile on this device. They are not embedded back into the HTML and are not transmitted anywhere.</div>
+</div>
+</section>
+<section class="panel doctrine-panel searchable" id="release">
+<div class="ph"><h2>10 — RELEASE AND ACTIVATION BOUNDARY</h2><span class="pill">LOCKED UNTIL RECOVERY</span></div>
+<div class="body">
+<div class="boundary"><b>ORION activation is not installed in V.00.</b><br/><br/>This file is a memory and source-recovery register only. It must not generate a convergence command, intelligence key, OCRABALL packet, Honeycomb activation, INTERIM instruction, or Vault release until the source architecture is recovered and approved.</div>
+<div class="locked" style="margin-top:10px"><b>Future governing sentence under review:</b><br/><span class="statement">ORION coordinates intelligence layers; each doctrine and governance retains authority over its own function; protected compartments converge only under verified Architect control.</span></div>
+</div>
+</section>
+<section class="panel" id="source-audit">
+<div class="ph"><h2>SOURCE AND INTEGRITY NOTICE</h2><span class="pill">PROVISIONAL</span></div>
+<div class="body"><div class="known"><b>Installed basis:</b> Current ORION discussion and remembered architecture terms only.<br/><b>Authoritative packets installed:</b> No.<br/><b>Doctrine status:</b> Incomplete and not activated.<br/><b>External dependencies:</b> None.<br/><b>Network transmission:</b> None.</div></div>
+</section>
+</main>
+</div>
+<footer>ORION · CABERIS INTELLIGENCE CONVERGENCE AND LAYERING · MEMORY REGISTER · V.00</footer>
+</div>
+<script>
+const search=document.getElementById('search');
+search.addEventListener('input',()=>{
+  const q=search.value.trim().toLowerCase();
+  document.querySelectorAll('.navItem').forEach(a=>a.classList.toggle('hidden',q&&!a.textContent.toLowerCase().includes(q)));
+  document.querySelectorAll('.searchable').forEach(s=>s.classList.toggle('hidden',q&&!s.textContent.toLowerCase().includes(q)));
+});
+let expanded=true;
+document.getElementById('expandBtn').addEventListener('click',function(){
+  expanded=!expanded;
+  document.querySelectorAll('.doctrine-panel').forEach(x=>x.classList.toggle('hidden',!expanded));
+  this.textContent=expanded?'Collapse Sections':'Expand Sections';
+});
+const notes=document.getElementById('recoveryNotes');
+const status=document.getElementById('noteStatus');
+const storageKey='caberis_orion_recovery_notes_v00';
+try{notes.value=localStorage.getItem(storageKey)||'';}catch(e){}
+document.getElementById('saveNotes').addEventListener('click',()=>{
+  try{localStorage.setItem(storageKey,notes.value);status.textContent='Notes saved locally in this browser profile.';}catch(e){status.textContent='Local save was blocked by the browser. Use Download Notes TXT.';}
+});
+document.getElementById('downloadNotes').addEventListener('click',()=>{
+  const header='ORION — CABERIS INTELLIGENCE CONVERGENCE AND LAYERING\nARCHITECT RECOVERY NOTES · V.00\n\n';
+  const blob=new Blob([header+notes.value],{type:'text/plain;charset=utf-8'});
+  const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='ORION_ARCHITECT_RECOVERY_NOTES_V_00.txt';document.body.appendChild(a);a.click();a.remove();URL.revokeObjectURL(url);status.textContent='Notes TXT prepared for local download.';
+});
+document.getElementById('clearNotes').addEventListener('click',()=>{
+  if(confirm('Clear the local ORION recovery notes from this browser?')){notes.value='';try{localStorage.removeItem(storageKey);}catch(e){}status.textContent='Local notes cleared.';}
+});
+</script>
+<button aria-controls="cbrQuickGlossary" aria-expanded="false" class="cbr-qg-toggle" type="button">Quick Glossary</button><nav aria-label="Quick glossary" class="cbr-qg" id="cbrQuickGlossary"><div class="cbr-qg-title"><span>Quick Glossary</span><span>12</span></div><a data-target="orion-foundation" href="#orion-foundation">ORION FOUNDATION</a><a data-target="purpose" href="#purpose"><span class="cbr-qg-code">01</span><span class="cbr-qg-name">Purpose and present boundary</span></a><a data-target="working-definition" href="#working-definition"><span class="cbr-qg-code">02</span><span class="cbr-qg-name">Working definition</span></a><a data-target="recovered" href="#recovered"><span class="cbr-qg-code">03</span><span class="cbr-qg-name">Recovered architecture terms</span></a><a data-target="principles" href="#principles"><span class="cbr-qg-code">04</span><span class="cbr-qg-name">Recovered principles</span></a><a data-target="relationship" href="#relationship"><span class="cbr-qg-code">05</span><span class="cbr-qg-name">Provisional relationship map</span></a><a data-target="unresolved" href="#unresolved"><span class="cbr-qg-code">06</span><span class="cbr-qg-name">Unresolved items</span></a><a data-target="packets" href="#packets"><span class="cbr-qg-code">07</span><span class="cbr-qg-name">Packet recovery register</span></a><a data-target="deep-dive" href="#deep-dive"><span class="cbr-qg-code">08</span><span class="cbr-qg-name">Future deep-dive sequence</span></a><a data-target="notes" href="#notes"><span class="cbr-qg-code">09</span><span class="cbr-qg-name">Architect recovery notes</span></a><a data-target="release" href="#release"><span class="cbr-qg-code">10</span><span class="cbr-qg-name">Release and activation boundary</span></a><a data-target="source-audit" href="#source-audit">SOURCE AND INTEGRITY NOTICE</a><a class="cbr-qg-top" href="#top">Return to Top</a></nav>
+<script id="cbr-doctrine-readiness-script">
+(()=>{
+  const nav=document.querySelector('.cbr-qg');
+  const toggle=document.querySelector('.cbr-qg-toggle');
+  if(toggle&&nav){toggle.addEventListener('click',()=>{const open=nav.classList.toggle('is-open');toggle.setAttribute('aria-expanded',String(open));});}
+  document.querySelectorAll('.cbr-qg a[href^="#"]').forEach(a=>a.addEventListener('click',()=>{if(nav)nav.classList.remove('is-open');if(toggle)toggle.setAttribute('aria-expanded','false');}));
+  const links=[...document.querySelectorAll('.cbr-qg a[data-target]')];
+  const map=new Map(links.map(a=>[a.dataset.target,a]));
+  const sections=[...map.keys()].map(id=>document.getElementById(id)).filter(Boolean);
+  if('IntersectionObserver' in window){
+    const io=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){links.forEach(a=>a.classList.remove('is-active'));const a=map.get(e.target.id);if(a)a.classList.add('is-active');}})},{rootMargin:'-18% 0px -68% 0px',threshold:0});
+    sections.forEach(s=>io.observe(s));
+  }
+})();
+</script>
+<script id="cbr-qg-scroll-correction">
+(()=>{
+  // CABERIS QUICK GLOSSARY ACTIVE FOLLOW CORRECTION
+  const glossary=document.querySelector('.cbr-qg');
+  if(!glossary)return;
+  const activeLinks=[...glossary.querySelectorAll('a[data-target]')];
+  const keepActiveVisible=()=>{
+    const active=glossary.querySelector('a.is-active');
+    if(active) active.scrollIntoView({block:'nearest',inline:'nearest',behavior:'smooth'});
+  };
+  const observer=new MutationObserver(mutations=>{
+    if(mutations.some(m=>m.type==='attributes'&&m.attributeName==='class')) keepActiveVisible();
+  });
+  activeLinks.forEach(a=>observer.observe(a,{attributes:true,attributeFilter:['class']}));
+  glossary.addEventListener('wheel',e=>e.stopPropagation(),{passive:true});
+  glossary.addEventListener('keydown',e=>{
+    if(['ArrowDown','ArrowUp','PageDown','PageUp','Home','End'].includes(e.key)) e.stopPropagation();
+  });
+})();
+</script>
+
+<script id="cbr-left-index-scroll-correction">
+(()=>{
+  // CABERIS LEFT RULE INDEX ACTIVE FOLLOW
+  const getRoots=()=>[
+    ...document.querySelectorAll('.layout > aside.panel .body'),
+    ...document.querySelectorAll('nav.side:not(.cbr-qg)')
+  ].filter((x,i,a)=>a.indexOf(x)===i);
+
+  const validLinks=root=>[...root.querySelectorAll('a[href^="#"]')].filter(a=>{
+    const id=decodeURIComponent((a.getAttribute('href')||'').slice(1));
+    return id && document.getElementById(id);
+  });
+
+  const setupRoot=root=>{
+    if(root.dataset.cbrLeftReady==='1')return;
+    root.dataset.cbrLeftReady='1';
+    const refresh=()=>{
+      const links=validLinks(root);
+      if(!links.length)return;
+      const pairs=links.map(a=>({a,id:decodeURIComponent(a.getAttribute('href').slice(1))}));
+      const setActive=id=>{
+        pairs.forEach(({a,id:linkId})=>{
+          const on=linkId===id;
+          a.classList.toggle('is-active',on);
+          if(on)a.setAttribute('aria-current','true');else a.removeAttribute('aria-current');
+        });
+        const active=pairs.find(x=>x.id===id)?.a;
+        if(active)active.scrollIntoView({block:'nearest',inline:'nearest',behavior:'smooth'});
+      };
+      const sections=pairs.map(x=>document.getElementById(x.id)).filter(Boolean);
+      if(!sections.length)return;
+      const observer=new IntersectionObserver(entries=>{
+        const visible=entries.filter(e=>e.isIntersecting).sort((a,b)=>Math.abs(a.boundingClientRect.top)-Math.abs(b.boundingClientRect.top));
+        if(visible[0])setActive(visible[0].target.id);
+      },{root:null,rootMargin:'-18% 0px -68% 0px',threshold:[0,0.01]});
+      sections.forEach(s=>observer.observe(s));
+      links.forEach(a=>a.addEventListener('click',()=>setActive(decodeURIComponent(a.getAttribute('href').slice(1)))));
+    };
+    refresh();
+    new MutationObserver(()=>refresh()).observe(root,{childList:true,subtree:true});
+    root.addEventListener('wheel',e=>e.stopPropagation(),{passive:true});
+  };
+
+  const initialize=()=>getRoots().forEach(setupRoot);
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',initialize,{once:true});else initialize();
+  new MutationObserver(initialize).observe(document.body,{childList:true,subtree:true});
+})();
+</script>
+
+<style id="cac-return-style">
+#cacReturnLighthouse{position:fixed;z-index:2147483647;right:max(14px,env(safe-area-inset-right));bottom:max(14px,env(safe-area-inset-bottom));display:flex;align-items:center;gap:9px;padding:10px 13px 10px 10px;border:1px solid rgba(160,225,255,.62);border-radius:999px;background:linear-gradient(145deg,rgba(13,24,31,.96),rgba(2,7,11,.97));color:#eefbff;text-decoration:none;font:700 11px/1.1 Arial,Helvetica,sans-serif;letter-spacing:.11em;box-shadow:0 0 0 1px rgba(255,255,255,.035) inset,0 12px 34px rgba(0,0,0,.55),0 0 22px rgba(89,199,241,.16);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease}
+#cacReturnLighthouse:hover,#cacReturnLighthouse:focus-visible{transform:translateY(-2px);border-color:#d9f6ff;box-shadow:0 14px 34px rgba(0,0,0,.58),0 0 28px rgba(114,215,255,.30);outline:none}
+#cacReturnLighthouse .cacLamp{position:relative;width:25px;height:30px;flex:0 0 25px}
+#cacReturnLighthouse .cacLamp:before{content:"";position:absolute;left:8px;top:2px;width:9px;height:10px;border:1px solid #d7f7ff;border-radius:4px 4px 2px 2px;background:radial-gradient(circle at 50% 45%,#fff 0 20%,#aeefff 26%,#52bddf 48%,rgba(64,171,209,.18) 70%);box-shadow:0 0 13px #aeefff}
+#cacReturnLighthouse .cacLamp:after{content:"";position:absolute;left:5px;bottom:0;width:15px;height:18px;clip-path:polygon(27% 0,73% 0,100% 100%,0 100%);background:linear-gradient(90deg,#1c2d36,#718793 50%,#17262e);border-bottom:2px solid #d3e7ef}
+#cacReturnLighthouse .cacBeam{position:absolute;left:-9px;top:4px;width:43px;height:8px;background:linear-gradient(90deg,transparent,rgba(174,239,255,.34),transparent);filter:blur(2px);animation:cacBeam 3.8s ease-in-out infinite}
+@keyframes cacBeam{0%,100%{opacity:.24;transform:scaleX(.78)}50%{opacity:.72;transform:scaleX(1.08)}}
+@media(max-width:620px){#cacReturnLighthouse{right:max(10px,env(safe-area-inset-right));bottom:max(10px,env(safe-area-inset-bottom));padding:9px 11px 9px 9px;font-size:10px}}
+@media(prefers-reduced-motion:reduce){#cacReturnLighthouse .cacBeam{animation:none}}
+</style>
+
+<a id="cacReturnLighthouse" href="../CAC.html#hub" aria-label="Return to Caberis Architectural Console">
+  <span class="cacLamp" aria-hidden="true"><span class="cacBeam"></span></span>
+  <span>BACK TO CAC</span>
+</a>
+</body></html>

@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>HERCULES RULE — Final · Caberis Governance Skin · V1.0</title>
+<style>
+:root{--bg:#020914;--p:#071522;--p2:#0a1d2d;--line:#245b75;--c:#18baff;--c2:#82ddff;--t:#eef8fc;--m:#93afbd;--ok:#35d28b;--w:#ffc857;--bad:#ff6262}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:linear-gradient(180deg,#01060d,#03111d 55%,#020811);color:var(--t);font:14px Inter,Segoe UI,Arial,sans-serif}.shell{max-width:1450px;margin:auto;padding:18px}header{position:sticky;top:6px;z-index:20;display:flex;gap:16px;align-items:center;padding:15px 18px;background:#061522f2;border:1px solid var(--line);border-radius:14px;box-shadow:0 16px 45px #0008}h1{font-size:clamp(20px,3vw,34px);margin:0;letter-spacing:.045em}header p{margin:4px 0 0;color:var(--c2);letter-spacing:.14em;font-size:11px}.actions{margin-left:auto;display:flex;gap:8px;flex-wrap:wrap}button,input{font:inherit}button{border:1px solid #1985b9;background:#08618a;color:#fff;border-radius:8px;padding:9px 12px;cursor:pointer}button.secondary{background:#071725;border-color:#315d72;color:#d8edf5}.layout{display:grid;grid-template-columns:330px 1fr;gap:14px;margin-top:14px}.panel{background:linear-gradient(145deg,#081926,#030d16);border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:0 15px 40px #0006}.ph{padding:12px 14px;background:#0c2a3c88;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;gap:10px}.ph h2{font-size:14px;letter-spacing:.08em;margin:0}.body{padding:14px}aside{position:sticky;top:102px;align-self:start;max-height:calc(100vh - 118px);overflow:auto}#search{width:100%;padding:10px;border:1px solid #315d72;background:#020b12;color:white;border-radius:8px;margin-bottom:8px}.navItem{display:block;padding:9px;border:1px solid #1c4458;background:#06141f;border-radius:8px;margin:6px 0;color:#eef8fc;text-decoration:none}.navItem:hover{border-color:var(--c);background:#0a2638}.code{font-weight:700;color:var(--c2);font-size:12px}.name{margin-top:3px;font-size:12px}.pill{font-size:10px;border:1px solid #315d72;border-radius:999px;padding:3px 7px;color:var(--m)}main{display:grid;gap:14px}.foundation{border-left:5px solid var(--c);padding:16px;background:#071d2b;border-radius:9px;font-size:16px;line-height:1.7}.foundation b{color:var(--c2)}.core{border-left:5px solid var(--w);padding:16px;background:#231c0c;border-radius:9px}.core h3{margin:0 0 8px;color:#ffe099}.core p{font-size:17px;line-height:1.7;margin:0}.lawGrid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.law{border:1px solid #25556d;border-radius:10px;background:#061520;padding:15px;scroll-margin-top:100px}.law h3{margin:0 0 9px;color:var(--c2);font-size:16px}.law p{margin:0;line-height:1.7;font-size:14px}.law ul{margin:10px 0 0;padding-left:22px;line-height:1.7}.declaration{display:grid;grid-template-columns:1fr 1fr;gap:10px}.decl{border:1px solid #24556c;border-radius:9px;padding:12px;background:#061520;line-height:1.6}.decl b{color:var(--c2)}.oath{border:1px solid #7f3941;background:#241116;border-radius:9px;padding:15px}.oath ol{margin:8px 0 0;padding-left:23px;line-height:1.8}.governing{font-size:20px;font-weight:800;line-height:1.55;text-align:center;color:#fff;padding:20px;border:1px solid #1985b9;background:linear-gradient(135deg,#071d2b,#0b3045);border-radius:11px}.metaGrid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.meta{border:1px solid #24556c;border-radius:9px;padding:11px;background:#061520}.meta b{display:block;color:var(--c2);font-size:11px;margin-bottom:4px}.hidden{display:none!important}footer{text-align:center;color:#6f8d9d;font-size:11px;margin:16px}@media(max-width:1000px){.layout{grid-template-columns:1fr}aside{position:static;max-height:none}.lawGrid,.declaration{grid-template-columns:1fr}.metaGrid{grid-template-columns:1fr 1fr}}@media(max-width:620px){.shell{padding:8px}header{position:relative;flex-wrap:wrap}.actions{margin-left:0}.metaGrid{grid-template-columns:1fr}}@media print{body{background:#fff;color:#111}.shell{max-width:none;padding:0}header{position:static;background:#071522;box-shadow:none}.actions,aside,#search{display:none!important}.layout{display:block}.panel{box-shadow:none;break-inside:avoid;margin-bottom:12px}.lawGrid{display:block}.law{break-inside:avoid;margin-bottom:10px;background:#fff;color:#111}.law h3{color:#0b4f70}.foundation,.core,.decl,.oath,.meta{background:#fff;color:#111}.governing{background:#eef8fc;color:#111}}
+</style>
+<style id="cbr-doctrine-readiness-style">
+/* CABERIS PROJECT DOCTRINE — ARCHITECT CONSOLE READINESS LAYER */
+:root{--cbr-qg-bg:rgba(4,17,27,.96);--cbr-qg-line:#28566e;--cbr-qg-text:#eef8fc;--cbr-qg-accent:#82ddff;--cbr-qg-active:#18baff}
+.cbr-doctrine-ribbon{position:relative;z-index:30;max-width:1450px;margin:10px auto 0;padding:9px 14px;border:1px solid var(--cbr-qg-line);border-radius:10px;background:linear-gradient(90deg,rgba(6,21,34,.96),rgba(10,38,56,.9));color:var(--cbr-qg-text);font:700 11px/1.4 Inter,Segoe UI,Arial,sans-serif;letter-spacing:.12em;text-transform:uppercase;box-shadow:0 10px 30px #0005}
+.cbr-doctrine-ribbon span{color:var(--cbr-qg-accent)}
+.cbr-qg-toggle{position:fixed;right:14px;top:14px;z-index:1001;display:none;border:1px solid var(--cbr-qg-line);border-radius:9px;background:var(--cbr-qg-bg);color:var(--cbr-qg-text);padding:9px 11px;font:700 11px Inter,Segoe UI,Arial,sans-serif;letter-spacing:.08em;cursor:pointer}
+.cbr-qg{position:fixed;right:14px;top:82px;z-index:1000;width:220px;max-height:calc(100vh - 100px);overflow:auto;padding:10px;border:1px solid var(--cbr-qg-line);border-radius:12px;background:var(--cbr-qg-bg);box-shadow:0 18px 45px #0009;backdrop-filter:blur(12px)}
+.cbr-qg-title{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:4px 5px 9px;color:var(--cbr-qg-accent);font:800 11px Inter,Segoe UI,Arial,sans-serif;letter-spacing:.1em;text-transform:uppercase;border-bottom:1px solid var(--cbr-qg-line)}
+.cbr-qg a{display:block;margin-top:6px;padding:7px 8px;border:1px solid transparent;border-radius:7px;color:var(--cbr-qg-text);text-decoration:none;font:600 11px/1.3 Inter,Segoe UI,Arial,sans-serif}
+.cbr-qg a:hover,.cbr-qg a:focus-visible{border-color:var(--cbr-qg-active);background:rgba(24,186,255,.10);outline:none}
+.cbr-qg a.is-active{border-color:var(--cbr-qg-active);background:rgba(24,186,255,.17);color:#fff}
+.cbr-qg-top{margin-top:8px!important;text-align:center;border-color:var(--cbr-qg-line)!important;color:var(--cbr-qg-accent)!important}
+@media(max-width:1180px){.cbr-qg-toggle{display:block}.cbr-qg{top:58px;transform:translateX(calc(100% + 25px));transition:transform .2s ease}.cbr-qg.is-open{transform:translateX(0)}}
+@media(max-width:620px){.cbr-doctrine-ribbon{margin:6px 8px 0;padding:8px 10px;font-size:9px}.cbr-qg{right:8px;width:min(88vw,280px)}.cbr-qg-toggle{right:8px;top:8px}}
+@media print{.cbr-doctrine-ribbon,.cbr-qg,.cbr-qg-toggle{display:none!important}}
+</style>
+<style id="cbr-qg-scroll-correction-style">
+/* CABERIS QUICK GLOSSARY SCROLL CORRECTION */
+.cbr-qg{
+  display:flex!important;
+  flex-direction:column!important;
+  overflow-y:auto!important;
+  overflow-x:hidden!important;
+  overscroll-behavior:contain;
+  scrollbar-width:thin;
+  scrollbar-color:#2f8fb6 #06131d;
+  padding-bottom:10px!important;
+}
+.cbr-qg::-webkit-scrollbar{width:8px}
+.cbr-qg::-webkit-scrollbar-track{background:#06131d;border-radius:999px}
+.cbr-qg::-webkit-scrollbar-thumb{background:#2f8fb6;border-radius:999px;border:2px solid #06131d}
+.cbr-qg-title{position:sticky!important;top:-10px;z-index:3;background:linear-gradient(180deg,#082234 86%,#082234ee);padding-top:10px!important;padding-bottom:9px!important;margin-top:-10px!important}
+.cbr-qg a{flex:0 0 auto}
+.cbr-qg .cbr-qg-top{position:sticky!important;bottom:-10px;z-index:3;background:#082234!important;margin-bottom:-10px!important;padding-bottom:12px!important;box-shadow:0 -10px 18px #020812e6}
+.cbr-qg a .cbr-qg-code{display:block;color:#82ddff;font-size:9px;font-weight:800;letter-spacing:.12em;margin-bottom:2px}
+.cbr-qg a .cbr-qg-name{display:block;white-space:normal;line-height:1.25}
+.cbr-qg a.is-active{scroll-margin-block:90px}
+@media(min-width:1181px){.cbr-qg{max-height:calc(100vh - 96px)!important}}
+</style><style id="cbr-left-index-scroll-style">
+/* CABERIS LEFT RULE INDEX FULL SCROLL CORRECTION */
+@media (min-width:1001px){
+  .layout > aside.panel{
+    position:sticky!important;
+    top:102px!important;
+    align-self:start!important;
+    height:calc(100vh - 118px)!important;
+    max-height:calc(100vh - 118px)!important;
+    min-height:0!important;
+    display:flex!important;
+    flex-direction:column!important;
+    overflow:hidden!important;
+  }
+  .layout > aside.panel > .ph{
+    flex:0 0 auto!important;
+  }
+  .layout > aside.panel > .body{
+    flex:1 1 auto!important;
+    min-height:0!important;
+    overflow-y:auto!important;
+    overflow-x:hidden!important;
+    overscroll-behavior:contain;
+    scrollbar-width:thin;
+    scrollbar-color:#2f8fb6 #06131d;
+    padding-bottom:18px!important;
+  }
+  .layout > aside.panel > .body::-webkit-scrollbar,
+  nav.side::-webkit-scrollbar{width:8px}
+  .layout > aside.panel > .body::-webkit-scrollbar-track,
+  nav.side::-webkit-scrollbar-track{background:#06131d;border-radius:999px}
+  .layout > aside.panel > .body::-webkit-scrollbar-thumb,
+  nav.side::-webkit-scrollbar-thumb{background:#2f8fb6;border-radius:999px;border:2px solid #06131d}
+  .layout > aside.panel > .body > input:first-child,
+  .layout > aside.panel > .body > #search{
+    position:sticky!important;
+    top:0!important;
+    z-index:4!important;
+    box-shadow:0 8px 14px #020812cc!important;
+  }
+  nav.side:not(.cbr-qg){
+    position:sticky!important;
+    top:18px!important;
+    align-self:start!important;
+    height:calc(100vh - 36px)!important;
+    max-height:calc(100vh - 36px)!important;
+    min-height:0!important;
+    overflow-y:auto!important;
+    overflow-x:hidden!important;
+    overscroll-behavior:contain;
+    scrollbar-width:thin;
+    scrollbar-color:#2f8fb6 #06131d;
+    padding-bottom:18px!important;
+  }
+}
+.layout > aside.panel .navItem.is-active,
+.layout > aside.panel a[aria-current="true"],
+nav.side:not(.cbr-qg) a.is-active,
+nav.side:not(.cbr-qg) a[aria-current="true"]{
+  border-color:#18baff!important;
+  background:#0b2b40!important;
+  box-shadow:inset 3px 0 0 #82ddff!important;
+}
+@media(max-width:1000px){
+  .layout > aside.panel{
+    position:static!important;
+    height:auto!important;
+    max-height:none!important;
+    overflow:visible!important;
+  }
+  .layout > aside.panel > .body{
+    max-height:none!important;
+    overflow:visible!important;
+  }
+  nav.side:not(.cbr-qg){
+    position:static!important;
+    height:auto!important;
+    max-height:none!important;
+    overflow:visible!important;
+  }
+}
+</style></head>
+<body id="top"><div class="cbr-doctrine-ribbon">CABERIS PROJECT DOCTRINE · ARCHITECT CONSOLE READY <span>· PRESENTATION LAYER ONLY</span></div><div class="shell">
+<header>
+<div><h1>HERCULES RULE</h1><p>CABERIS DATA GOVERNANCE · RULE 1 · FINAL CONTROLLED CONTENT · CABERIS GOVERNANCE SKIN · V1.0</p></div>
+<div class="actions"><button class="secondary" id="expandBtn">Expand All</button><button class="secondary" onclick="window.print()">Print / PDF</button></div>
+</header>
+<section class="panel" id="hercules-rule-foundation" style="margin-top:14px">
+<div class="ph"><h2>HERCULES RULE FOUNDATION</h2><span class="pill">FINAL</span></div>
+<div class="body">
+<div class="metaGrid">
+<div class="meta"><b>DOCUMENT</b>HERCULES RULE</div>
+<div class="meta"><b>DOMAIN</b>Caberis Data Governance</div>
+<div class="meta"><b>REVISION</b>V1.0</div>
+<div class="meta"><b>STATUS</b>Final Controlled Standard</div>
+</div>
+</div>
+</section>
+<div class="layout">
+<aside class="panel">
+<div class="ph"><h2>HERCULES RULE INDEX</h2><span class="pill">20 Laws</span></div>
+<div class="body">
+<input id="search" placeholder="Search law or keyword"/>
+<div id="nav">
+<a class="navItem" href="#core"><div class="code">CORE LAW</div><div class="name">Hercules Is the Supermarket</div></a>
+<a class="navItem" href="#law1"><div class="code">LAW 01</div><div class="name">Prime Law</div></a>
+<a class="navItem" href="#law2"><div class="code">LAW 02</div><div class="name">Hercules Law</div></a>
+<a class="navItem" href="#law3"><div class="code">LAW 03</div><div class="name">ATHENA Law</div></a>
+<a class="navItem" href="#law4"><div class="code">LAW 04</div><div class="name">HAU Law</div></a>
+<a class="navItem" href="#law5"><div class="code">LAW 05</div><div class="name">Honeycomb Law</div></a>
+<a class="navItem" href="#law6"><div class="code">LAW 06</div><div class="name">Homogeneity Law</div></a>
+<a class="navItem" href="#law7"><div class="code">LAW 07</div><div class="name">Blank Law</div></a>
+<a class="navItem" href="#law8"><div class="code">LAW 08</div><div class="name">Noise Rejection Law</div></a>
+<a class="navItem" href="#law9"><div class="code">LAW 09</div><div class="name">Source-Faithfulness Law</div></a>
+<a class="navItem" href="#law10"><div class="code">LAW 10</div><div class="name">Continuation Law</div></a>
+<a class="navItem" href="#law11"><div class="code">LAW 11</div><div class="name">Human-and-Machine Law</div></a>
+<a class="navItem" href="#law12"><div class="code">LAW 12</div><div class="name">No Silent Exception Law</div></a>
+<a class="navItem" href="#law13"><div class="code">LAW 13</div><div class="name">No Redesign During Polish Law</div></a>
+<a class="navItem" href="#law14"><div class="code">LAW 14</div><div class="name">Trajectory Law</div></a>
+<a class="navItem" href="#law15"><div class="code">LAW 15</div><div class="name">External Audit Law</div></a>
+<a class="navItem" href="#law16"><div class="code">LAW 16</div><div class="name">Suspicion Trigger Law</div></a>
+<a class="navItem" href="#law17"><div class="code">LAW 17</div><div class="name">Exact Source Request Law</div></a>
+<a class="navItem" href="#law18"><div class="code">LAW 18</div><div class="name">Reset Foundation Law</div></a>
+<a class="navItem" href="#law19"><div class="code">LAW 19</div><div class="name">Expansion Law</div></a>
+<a class="navItem" href="#law20"><div class="code">LAW 20</div><div class="name">Caberis Language Law</div></a>
+<a class="navItem" href="#declaration"><div class="code">OPERATING DECLARATION</div><div class="name">Hercules · HAU · ATHENA · Honeycombs</div></a>
+<a class="navItem" href="#oath"><div class="code">PRODUCTION OATH</div><div class="name">Operational Prohibitions</div></a>
+<a class="navItem" href="#governing"><div class="code">GOVERNING SENTENCE</div><div class="name">Same Meaning · Same Place</div></a>
+</div>
+</div>
+</aside>
+<main>
+<section class="panel" id="core">
+<div class="ph"><h2>HERCULES CORE LAW</h2><span class="pill">CORE AUTHORITY</span></div>
+<div class="body"><div class="core"><h3>Hercules Law — Hercules Is the Supermarket</h3><p>Hercules is not a raw dump and not a temporary extraction file. It is the distilled, organized, verified supermarket where ATHENA can shop without normal dependence on raw files.</p></div></div>
+</section>
+<section class="panel" id="all-20-hercules-governing-laws">
+<div class="ph"><h2>ALL 20 HERCULES GOVERNING LAWS</h2><span class="pill">COMPLETE CONTENT</span></div>
+<div class="body"><div class="lawGrid" id="laws">
+<article class="law" id="law1"><h3>1. Prime Law — Data Must Become Usable Intelligence</h3><p>Data is not accepted merely because it exists. It must be clean, meaningful, correctly positioned, honeycomb-classified, and reusable.</p></article>
+<article class="law" id="law2"><h3>2. Hercules Law — Hercules Is the Supermarket</h3><p>Hercules must be a distilled, organized, verified, source-faithful, noise-free, homogeneous, and ATHENA-ready data supermarket—not a raw dump.</p></article>
+<article class="law" id="law3"><h3>3. ATHENA Law — ATHENA Shops From Hercules</h3><p>ATHENA reads Hercules first, compares honeycombs, detects missing cells, builds intelligence, and prepares Loader, Viewer, Market Intelligence, or Engineering Intelligence outputs.</p></article>
+<article class="law" id="law4"><h3>4. HAU Law — HAU Is the Dictionary</h3><p>Every field used by Hercules must be defined by HAU. Every field defined by HAU must use the same meaning, wording, code, blank rule, and trajectory in Hercules.</p></article>
+<article class="law" id="law5"><h3>5. Honeycomb Law — Everything Must Belong to a Cell</h3><p>No useful data may float without classification. Every useful value must belong to a defined honeycomb cell.</p></article>
+<article class="law" id="law6"><h3>6. Homogeneity Law — Same Meaning, Same Place</h3><p>The same meaning must have the same name, position, data type, blank rule, and machine code across all Hercules workbooks.</p></article>
+<article class="law" id="law7"><h3>7. Blank Law — Blank Must Have Meaning</h3><p>Blank must never mean the extraction was forgotten. A blank must represent a controlled condition such as:</p><ul><li>not available;</li><li>not applicable;</li><li>source missing;</li><li>not extracted yet;</li><li>zero;</li><li>reserved.</li></ul></article>
+<article class="law" id="law8"><h3>8. Noise Rejection Law — Noise Is Not Data</h3><p>Advertisements, broker panels, unrelated market movers, website navigation, footer and legal blocks, decorative text, and unrelated records must not enter Hercules as intelligence data.</p></article>
+<article class="law" id="law9"><h3>9. Source-Faithfulness Law — Distill, Do Not Distort</h3><p>Useful source rows must not be reduced into summaries unless the complete useful source rows are already preserved in the correct honeycomb.</p></article>
+<article class="law" id="law10"><h3>10. Continuation Law — Page Two Is Still Data</h3><p>Extraction is not complete until the beginning and end of every source table are accounted for, including continuation pages.</p></article>
+<article class="law" id="law11"><h3>11. Human-and-Machine Law</h3><p>A Hercules workbook must be understandable by the Architect and mechanically stable enough for ATHENA to read later.</p></article>
+<article class="law" id="law12"><h3>12. No Silent Exception Law</h3><p>Missing, suspicious, reduced, dirty, structurally different, or uncertain data must be declared. It must never be silently accepted or passed.</p></article>
+<article class="law" id="law13"><h3>13. No Redesign During Polish Law</h3><p>Polishing means unifying and hardening the existing Hercules structure. It does not mean:</p><ul><li>adding sheets;</li><li>changing workbook geometry;</li><li>moving field meanings;</li><li>renaming controlled headers;</li><li>inventing new compartments.</li></ul></article>
+<article class="law" id="law14"><h3>14. Trajectory Law</h3><p>No correction may change the approved Caberis system trajectory unless authorized by the Architect.</p></article>
+<article class="law" id="law15"><h3>15. External Audit Law</h3><p>Audit findings and audit controls must remain outside the protected Hercules workbook geometry. The audit must not pollute or restructure Hercules.</p></article>
+<article class="law" id="law16"><h3>16. Suspicion Trigger Law</h3><p>Silent validation must stop when any of the following is detected:</p><ul><li>a source is registered but the Hercules target is blank;</li><li>a summary appears where complete source rows should exist;</li><li>row count is suspiciously low;</li><li>continuation pages are missing;</li><li>headers or sheet order have drifted;</li><li>Hercules and HAU do not match;</li><li>noise has entered the extraction.</li></ul></article>
+<article class="law" id="law17"><h3>17. Exact Source Request Law</h3><p>Request only the smallest exact source needed to close a confirmed gap. Do not request broad raw packages blindly.</p></article>
+<article class="law" id="law18"><h3>18. Reset Foundation Law</h3><p>A clean Hercules set is the foundation from which ATHENA, Viewer, Loader, Market Intelligence, and Engineering Intelligence can be regenerated.</p></article>
+<article class="law" id="law19"><h3>19. Expansion Law</h3><p>Clean honeycomb data must support both historical and future intelligence, including:</p><ul><li>five-year study;</li><li>ten-year study;</li><li>fifteen-year study;</li><li>full-history study;</li><li>daily refresh;</li><li>projections;</li><li>simulations.</li></ul></article>
+<article class="law" id="law20"><h3>20. Caberis Language Law</h3><p>Every controlled field must contain:</p><ul><li>human label;</li><li>machine code;</li><li>honeycomb classification;</li><li>data type;</li><li>blank rule;</li><li>source wall;</li><li>ATHENA usage;</li><li>trajectory impact.</li></ul></article>
+</div></div>
+</section>
+<section class="panel" id="declaration">
+<div class="ph"><h2>HERCULES OPERATING DECLARATION</h2><span class="pill">OPERATING ROLES</span></div>
+<div class="body"><div class="declaration">
+<div class="decl"><b>External Sources</b> are construction materials outside normal Caberis operation.</div>
+<div class="decl"><b>Hercules</b> is the properly distilled supermarket.</div>
+<div class="decl"><b>HAU</b> is the dictionary, grammar, identity registry, and language control.</div>
+<div class="decl"><b>ATHENA</b> is the shopper, interpreter, and intelligence assembler.</div>
+<div class="decl"><b>Honeycombs</b> are the classified shelves and cells where every useful value belongs.</div>
+<div class="decl"><b>Market Intelligence and Engineering Intelligence</b> are the operating outputs.</div>
+</div></div>
+</section>
+<section class="panel" id="oath">
+<div class="ph"><h2>HERCULES PRODUCTION OATH</h2><span class="pill">OPERATIONAL PROHIBITIONS</span></div>
+<div class="body"><div class="oath"><p>The source also establishes these operational prohibitions:</p><ol>
+<li>Do not treat Hercules as a raw dump.</li>
+<li>Do not reduce useful source rows into unsupported summaries.</li>
+<li>Do not extract noise as data.</li>
+<li>Do not change wording, headers, rows, columns, or trajectory for convenience.</li>
+<li>Do not add sheets inside protected Hercules workbooks during polishing.</li>
+<li>Use HAU as the dictionary and registry.</li>
+</ol></div></div>
+</section>
+<section class="panel" id="governing">
+<div class="ph"><h2>GOVERNING SENTENCE</h2><span class="pill">LOCKED</span></div>
+<div class="body"><div class="governing">Same meaning. Same place. Same wording. Same code. Same blank rule. Different data only.</div></div>
+</section>
+</main>
+</div>
+<footer>HERCULES RULE · CABERIS DATA GOVERNANCE · FINAL CONTROLLED CONTENT · CABERIS GOVERNANCE SKIN · V1.0</footer>
+</div>
+<script>
+const search=document.getElementById('search');
+search.addEventListener('input',()=>{
+  const q=search.value.trim().toLowerCase();
+  document.querySelectorAll('.navItem').forEach(a=>a.classList.toggle('hidden',q&&!a.textContent.toLowerCase().includes(q)));
+  document.querySelectorAll('.law').forEach(a=>a.classList.toggle('hidden',q&&!a.textContent.toLowerCase().includes(q)));
+});
+let expanded=true;
+document.getElementById('expandBtn').addEventListener('click',function(){
+  expanded=!expanded;
+  document.querySelectorAll('.law').forEach((x,i)=>{if(i>1)x.classList.toggle('hidden',!expanded)});
+  this.textContent=expanded?'Collapse Laws':'Expand All';
+});
+</script>
+<button aria-controls="cbrQuickGlossary" aria-expanded="false" class="cbr-qg-toggle" type="button">Quick Glossary</button><nav aria-label="Quick glossary" class="cbr-qg" id="cbrQuickGlossary"><div class="cbr-qg-title"><span>Quick Glossary</span><span>6</span></div><a data-target="hercules-rule-foundation" href="#hercules-rule-foundation">HERCULES RULE FOUNDATION</a><a data-target="core" href="#core"><span class="cbr-qg-code">CORE LAW</span><span class="cbr-qg-name">Hercules Is the Supermarket</span></a><a data-target="all-20-hercules-governing-laws" href="#all-20-hercules-governing-laws">ALL 20 HERCULES GOVERNING LAWS</a><a data-target="declaration" href="#declaration"><span class="cbr-qg-code">OPERATING DECLARATION</span><span class="cbr-qg-name">Hercules · HAU · ATHENA · Honeycombs</span></a><a data-target="oath" href="#oath"><span class="cbr-qg-code">PRODUCTION OATH</span><span class="cbr-qg-name">Operational Prohibitions</span></a><a data-target="governing" href="#governing"><span class="cbr-qg-code">GOVERNING SENTENCE</span><span class="cbr-qg-name">Same Meaning · Same Place</span></a><a class="cbr-qg-top" href="#top">Return to Top</a></nav>
+<script id="cbr-doctrine-readiness-script">
+(()=>{
+  const nav=document.querySelector('.cbr-qg');
+  const toggle=document.querySelector('.cbr-qg-toggle');
+  if(toggle&&nav){toggle.addEventListener('click',()=>{const open=nav.classList.toggle('is-open');toggle.setAttribute('aria-expanded',String(open));});}
+  document.querySelectorAll('.cbr-qg a[href^="#"]').forEach(a=>a.addEventListener('click',()=>{if(nav)nav.classList.remove('is-open');if(toggle)toggle.setAttribute('aria-expanded','false');}));
+  const links=[...document.querySelectorAll('.cbr-qg a[data-target]')];
+  const map=new Map(links.map(a=>[a.dataset.target,a]));
+  const sections=[...map.keys()].map(id=>document.getElementById(id)).filter(Boolean);
+  if('IntersectionObserver' in window){
+    const io=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){links.forEach(a=>a.classList.remove('is-active'));const a=map.get(e.target.id);if(a)a.classList.add('is-active');}})},{rootMargin:'-18% 0px -68% 0px',threshold:0});
+    sections.forEach(s=>io.observe(s));
+  }
+})();
+</script>
+<script id="cbr-qg-scroll-correction">
+(()=>{
+  // CABERIS QUICK GLOSSARY ACTIVE FOLLOW CORRECTION
+  const glossary=document.querySelector('.cbr-qg');
+  if(!glossary)return;
+  const activeLinks=[...glossary.querySelectorAll('a[data-target]')];
+  const keepActiveVisible=()=>{
+    const active=glossary.querySelector('a.is-active');
+    if(active) active.scrollIntoView({block:'nearest',inline:'nearest',behavior:'smooth'});
+  };
+  const observer=new MutationObserver(mutations=>{
+    if(mutations.some(m=>m.type==='attributes'&&m.attributeName==='class')) keepActiveVisible();
+  });
+  activeLinks.forEach(a=>observer.observe(a,{attributes:true,attributeFilter:['class']}));
+  glossary.addEventListener('wheel',e=>e.stopPropagation(),{passive:true});
+  glossary.addEventListener('keydown',e=>{
+    if(['ArrowDown','ArrowUp','PageDown','PageUp','Home','End'].includes(e.key)) e.stopPropagation();
+  });
+})();
+</script>
+
+<script id="cbr-left-index-scroll-correction">
+(()=>{
+  // CABERIS LEFT RULE INDEX ACTIVE FOLLOW
+  const getRoots=()=>[
+    ...document.querySelectorAll('.layout > aside.panel .body'),
+    ...document.querySelectorAll('nav.side:not(.cbr-qg)')
+  ].filter((x,i,a)=>a.indexOf(x)===i);
+
+  const validLinks=root=>[...root.querySelectorAll('a[href^="#"]')].filter(a=>{
+    const id=decodeURIComponent((a.getAttribute('href')||'').slice(1));
+    return id && document.getElementById(id);
+  });
+
+  const setupRoot=root=>{
+    if(root.dataset.cbrLeftReady==='1')return;
+    root.dataset.cbrLeftReady='1';
+    const refresh=()=>{
+      const links=validLinks(root);
+      if(!links.length)return;
+      const pairs=links.map(a=>({a,id:decodeURIComponent(a.getAttribute('href').slice(1))}));
+      const setActive=id=>{
+        pairs.forEach(({a,id:linkId})=>{
+          const on=linkId===id;
+          a.classList.toggle('is-active',on);
+          if(on)a.setAttribute('aria-current','true');else a.removeAttribute('aria-current');
+        });
+        const active=pairs.find(x=>x.id===id)?.a;
+        if(active)active.scrollIntoView({block:'nearest',inline:'nearest',behavior:'smooth'});
+      };
+      const sections=pairs.map(x=>document.getElementById(x.id)).filter(Boolean);
+      if(!sections.length)return;
+      const observer=new IntersectionObserver(entries=>{
+        const visible=entries.filter(e=>e.isIntersecting).sort((a,b)=>Math.abs(a.boundingClientRect.top)-Math.abs(b.boundingClientRect.top));
+        if(visible[0])setActive(visible[0].target.id);
+      },{root:null,rootMargin:'-18% 0px -68% 0px',threshold:[0,0.01]});
+      sections.forEach(s=>observer.observe(s));
+      links.forEach(a=>a.addEventListener('click',()=>setActive(decodeURIComponent(a.getAttribute('href').slice(1)))));
+    };
+    refresh();
+    new MutationObserver(()=>refresh()).observe(root,{childList:true,subtree:true});
+    root.addEventListener('wheel',e=>e.stopPropagation(),{passive:true});
+  };
+
+  const initialize=()=>getRoots().forEach(setupRoot);
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',initialize,{once:true});else initialize();
+  new MutationObserver(initialize).observe(document.body,{childList:true,subtree:true});
+})();
+</script>
+
+<style id="cac-return-style">
+#cacReturnLighthouse{position:fixed;z-index:2147483647;right:max(14px,env(safe-area-inset-right));bottom:max(14px,env(safe-area-inset-bottom));display:flex;align-items:center;gap:9px;padding:10px 13px 10px 10px;border:1px solid rgba(160,225,255,.62);border-radius:999px;background:linear-gradient(145deg,rgba(13,24,31,.96),rgba(2,7,11,.97));color:#eefbff;text-decoration:none;font:700 11px/1.1 Arial,Helvetica,sans-serif;letter-spacing:.11em;box-shadow:0 0 0 1px rgba(255,255,255,.035) inset,0 12px 34px rgba(0,0,0,.55),0 0 22px rgba(89,199,241,.16);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease}
+#cacReturnLighthouse:hover,#cacReturnLighthouse:focus-visible{transform:translateY(-2px);border-color:#d9f6ff;box-shadow:0 14px 34px rgba(0,0,0,.58),0 0 28px rgba(114,215,255,.30);outline:none}
+#cacReturnLighthouse .cacLamp{position:relative;width:25px;height:30px;flex:0 0 25px}
+#cacReturnLighthouse .cacLamp:before{content:"";position:absolute;left:8px;top:2px;width:9px;height:10px;border:1px solid #d7f7ff;border-radius:4px 4px 2px 2px;background:radial-gradient(circle at 50% 45%,#fff 0 20%,#aeefff 26%,#52bddf 48%,rgba(64,171,209,.18) 70%);box-shadow:0 0 13px #aeefff}
+#cacReturnLighthouse .cacLamp:after{content:"";position:absolute;left:5px;bottom:0;width:15px;height:18px;clip-path:polygon(27% 0,73% 0,100% 100%,0 100%);background:linear-gradient(90deg,#1c2d36,#718793 50%,#17262e);border-bottom:2px solid #d3e7ef}
+#cacReturnLighthouse .cacBeam{position:absolute;left:-9px;top:4px;width:43px;height:8px;background:linear-gradient(90deg,transparent,rgba(174,239,255,.34),transparent);filter:blur(2px);animation:cacBeam 3.8s ease-in-out infinite}
+@keyframes cacBeam{0%,100%{opacity:.24;transform:scaleX(.78)}50%{opacity:.72;transform:scaleX(1.08)}}
+@media(max-width:620px){#cacReturnLighthouse{right:max(10px,env(safe-area-inset-right));bottom:max(10px,env(safe-area-inset-bottom));padding:9px 11px 9px 9px;font-size:10px}}
+@media(prefers-reduced-motion:reduce){#cacReturnLighthouse .cacBeam{animation:none}}
+</style>
+
+<a id="cacReturnLighthouse" href="../CAC.html#hub" aria-label="Return to Caberis Architectural Console">
+  <span class="cacLamp" aria-hidden="true"><span class="cacBeam"></span></span>
+  <span>BACK TO CAC</span>
+</a>
+</body></html>
